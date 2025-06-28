@@ -23,7 +23,7 @@ git clone git@github.com/RAJA-Brawijaya-2025/raja-brawijaya-2025.git
 1. Change your current directory to the project's root folder:
 
 ```shell
-cd RABRAW-EXTERNAL
+cd raja-brawijaya-2025
 ```
 
 2. Install the required PHP dependencies using Composer:
