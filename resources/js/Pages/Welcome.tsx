@@ -174,7 +174,7 @@ export default function Welcome({
                                         </h2>
 
                                         <p className="mt-4 text-sm/relaxed">
-                                            HALO SAYA CUT HEHEHEHEE
+                                            HALO SAYA CUT HEHEHEHEE WKWKKWKWKWKKWKKWKKWKW
                                         </p>
                                     </div>
 
