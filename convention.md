@@ -71,10 +71,6 @@ Use the following structure:
 
 ---
 
-## Biome Code Style
-
-This project uses [Biome](https://biomejs.dev/) for code formatting and linting.
-
 ### Commands:
 ```bash
 npm run lint       # Check code issues
