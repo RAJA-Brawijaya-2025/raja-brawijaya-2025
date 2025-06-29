@@ -47,7 +47,7 @@ const Main = () => {
                                     `,
             }}
           >
-            Raja Brawijaya
+            RAJA Brawijaya
           </h1>
           <h2
             className="text-xl font-bold text-[#13B2BE]"
