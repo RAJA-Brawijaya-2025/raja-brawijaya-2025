@@ -14,7 +14,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/comingsoon', function () {
+Route::get('/coming-soon', function () {
     return Inertia::render('Comingsoon');
 });
 
