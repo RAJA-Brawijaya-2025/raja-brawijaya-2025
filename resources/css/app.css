@@ -6,8 +6,14 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* font */
   --font-sans: "Lato", ui-sans-serif, system-ui, sans-serif;
   --font-sora: "Sora", sans-serif;
+  /* color pallete */
+  --color-primary-100: #83B3B6;
+  --color-primary-200: #2F8AAF;
+  --color-primary-300: #1D5D77;
+  --color-primary-400: #363753;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

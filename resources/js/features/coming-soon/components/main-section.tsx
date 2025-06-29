@@ -69,9 +69,6 @@ const Main = () => {
             Cie... nungguin, ya?
           </p>
           <div className="mb-12">
-            {/* <p className="text-6xl text-main">
-                            Dikit lagi jadi,<br />mending foto dulu!
-                        </p> */}
             <img
               src="/assets/comingsoon/textCenter.svg"
               alt="text"
@@ -83,23 +80,7 @@ const Main = () => {
           </button>
         </div>
       </motion.section>
-      <style>
-        {`
-                    .text-main {
-                        text-align: center;
-                        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                        -webkit-text-stroke-width: 3px;
-                        -webkit-text-stroke-color: #FFF;
-                        font-style: normal;
-                        font-weight: 800;
-                        line-height: normal;
-                        background: linear-gradient(90deg, #1D5D77 0%, #13B2BE 52.88%, #83CDCC 100%);
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                    }
-                `}
-      </style>
+      <style></style>
     </main>
   );
 };
