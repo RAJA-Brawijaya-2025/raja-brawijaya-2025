@@ -24,7 +24,7 @@ const Loader = () => {
         className="h-48 pointer-events-none select-none"
       />
       <p
-        className="text-3xl font-bold text-[#107D8F]"
+        className="text-3xl font-sora font-bold text-[#107D8F]"
         style={{
           textShadow: `
                 2px 2px 0 #fff,

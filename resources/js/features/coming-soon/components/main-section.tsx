@@ -29,7 +29,7 @@ const Main = () => {
           alt="foto"
           className="absolute object-contain w-32 duration-500 ease-in-out right-[20%] top-32 -rotate-[20deg] hover:rotate-0 blur-[2px]"
         />
-        <div className="flex flex-col max-w-xs px-8 mx-auto">
+        <div className="flex flex-col max-w-xs px-8 mx-auto font-sora">
           <img
             src="/assets/comingsoon/mahkota.png"
             alt="mahkota"
@@ -65,13 +65,10 @@ const Main = () => {
           </h2>
         </div>
         <div className="z-10 flex flex-col gap-2">
-          <p className="text-2xl text-[#1D5D77] font-bold -translate-y-5">
+          <p className="text-2xl text-[#1D5D77] font-extrabold -translate-y-5">
             Cie... nungguin, ya?
           </p>
           <div className="mb-12">
-            {/* <p className="text-6xl text-main">
-                            Dikit lagi jadi,<br />mending foto dulu!
-                        </p> */}
             <img
               src="/assets/comingsoon/textCenter.svg"
               alt="text"
@@ -79,27 +76,11 @@ const Main = () => {
             />
           </div>
           <button className="mx-auto flex w-[210px] h-[55px] px-9 py-[14.5px] justify-center items-center gap-2 rounded-2xl bg-gradient-to-l from-[#7FCCCC] to-[#13B2BE] shadow-[inset_-4px_4px_7px_0px_rgba(255,255,255,0.5),0px_0px_18.5px_0px_#0C4C66] cursor-pointer">
-            <p className="text-2xl font-bold text-white">Klik disini!</p>
+            <p className="text-2xl font-extrabold text-white">Klik disini!</p>
           </button>
         </div>
       </motion.section>
-      <style>
-        {`
-                    .text-main {
-                        text-align: center;
-                        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                        -webkit-text-stroke-width: 3px;
-                        -webkit-text-stroke-color: #FFF;
-                        font-style: normal;
-                        font-weight: 800;
-                        line-height: normal;
-                        background: linear-gradient(90deg, #1D5D77 0%, #13B2BE 52.88%, #83CDCC 100%);
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                    }
-                `}
-      </style>
+      <style></style>
     </main>
   );
 };
