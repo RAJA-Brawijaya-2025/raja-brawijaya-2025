@@ -17,7 +17,9 @@ Route::get('/', function () {
 Route::get('/coming-soon', function () {
     return Inertia::render('Comingsoon');
 });
-
+Route::get('/photo-booth', function () {
+    return Inertia::render('PhotoBooth');
+});
 Route::get('/dev', function () {
     return Inertia::render('dev/Dev');
 });
