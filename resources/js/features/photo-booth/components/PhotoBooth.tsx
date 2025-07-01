@@ -175,7 +175,6 @@ const PhotoBooth: React.FC<PhotoBoothProps> = ({
           playsInline
           muted
           className="w-full h-full rounded-lg object-cover"
-          style={{ transform: isMobile ? 'scaleX(-1)' : 'none' }}
           onLoadStart={() => console.log('Video load started')}
           onLoadedData={() => console.log('Video loaded')}
           onPlay={() => console.log('Video playing')}
@@ -337,7 +336,7 @@ const PhotoBooth: React.FC<PhotoBoothProps> = ({
         </h5>
       </div>
 
-      <div className="flex flex-col md:flex-row w-full 2xl:max-w-4xl xl:max-w-2xl max-w-sm md:px-0 lg:max-w-xl md:max-w-xl gap-4">
+      <div className="flex flex-col md:flex-row w-full 2xl:max-w-4xl xl:max-w-4xl max-w-sm md:px-0 lg:max-w-xl md:max-w-xl gap-4">
         <div
           className={`md:w-10/12 w-full flex-col items-center justify-center ${
             isMobile && isSessionComplete && !isRetakingPhoto
@@ -351,20 +350,32 @@ const PhotoBooth: React.FC<PhotoBoothProps> = ({
           {!isCapturing && !isSessionComplete && !isRetakingPhoto && (
             <div className="mt-4 w-full flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex justify-between md:justify-normal items-center w-full gap-2">
-                <span className="text-xl text-white font-sora font-bold">
-                  Timer:
+                <span className="text-xl text-primary-300 font-sora font-bold">
+                  Timer
                 </span>
-                <select
-                  value={timerDuration}
-                  onChange={(e) =>
-                    onTimerDurationChange(Number(e.target.value))
-                  }
-                  className="px-3 py-3 border border-primary-300 bg-white text-primary-300 rounded-lg"
-                >
-                  <option value={3}>3 detik</option>
-                  <option value={5}>5 detik</option>
-                  <option value={10}>10 detik</option>
-                </select>
+                <div className="relative inline-block w-fit">
+                  <select
+                    value={timerDuration}
+                    onChange={(e) =>
+                      onTimerDurationChange(Number(e.target.value))
+                    }
+                    className="w-full px-3 py-3 pr-10 border border-primary-300 bg-white text-primary-300 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  >
+                    <option value="3">3 detik</option>
+                    <option value="5">5 detik</option>
+                    <option value="10">10 detik</option>
+                  </select>
+
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-primary-300">
+                    <svg
+                      className="fill-current h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                    </svg>
+                  </div>
+                </div>
               </div>
               <Button
                 onClick={onStartCaptureSession}
