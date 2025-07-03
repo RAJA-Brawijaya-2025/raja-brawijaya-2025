@@ -138,3 +138,28 @@
         rgba(255, 255, 255, 0) 100%
     );
 }
+
+/* resources/css/app.css */
+
+.photostrip-frame {
+    background-image: 
+        url('/assets/photoresult/ornamentBottom.svg'),
+        url('/assets/photoresult/ornamentLeft.svg'),
+        url('/assets/photoresult/ornamentLeftBot.svg'),
+        url('/assets/photoresult/ornamentRight.png'),
+        linear-gradient(180deg, #13B2BE 7.21%, #FFFFFF 75.48%);
+
+    background-position: 
+        bottom right, 
+        left bottom ,    
+        left top ,    
+        right top -20%;   
+
+    background-repeat: no-repeat;
+
+        background-size: 
+        100%,     
+        20%,       
+        50%,      
+        100%;       
+}

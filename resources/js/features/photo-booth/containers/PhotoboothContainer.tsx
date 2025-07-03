@@ -1,4 +1,5 @@
 import { Head } from '@inertiajs/react';
+import { router } from '@inertiajs/react';
 import RabrawHead from '../components/RabrawHead';
 import Ornaments from '../components/Ornaments';
 import Awan from '../components/Awan';
@@ -32,7 +33,8 @@ const PhotoboothContainer = () => {
   } = usePhotoBooth();
 
   const handleNext = () => {
-    console.log('Proceeding to next step...');
+    sessionStorage.setItem('capturedImages', JSON.stringify(capturedImages));
+    router.get('/photo-result');
   };
 
   return (
