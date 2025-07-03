@@ -1,11 +1,7 @@
 const Ornaments = () => {
   return (
-    // 1. Container utama dibuat memenuhi layar dengan `absolute inset-0`
-    //    dan `pointer-events-none` agar tidak mengganggu klik.
     <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-      {/* 2. Gunakan satu flex container untuk mengatur elemen ke ujung */}
       <div className="w-full h-full flex justify-between items-center  sm:items-end">
-        {/* Ornamen Kiri Bawah */}
         <div className="flex-col sm:flex  hidden">
           <img
             src="/assets/photoresult/ornament.png"
@@ -19,10 +15,8 @@ const Ornaments = () => {
           />
         </div>
 
-        {/* Ornamen Kanan Bawah */}
         <div className="flex-col sm:flex items-end hidden">
           {' '}
-          {/* `items-end` untuk meratakan ke kanan */}
           <img
             src="/assets/photoresult/ornament.png"
             alt="ornamen kanan atas"
