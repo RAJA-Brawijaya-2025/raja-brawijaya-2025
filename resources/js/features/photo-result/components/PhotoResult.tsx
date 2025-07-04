@@ -5,7 +5,7 @@ import { imageToBase64 } from '@/shared/lib/utils';
 const FrameBasic = React.forwardRef<HTMLDivElement, { images: string[] }>(
   ({ images }, ref) => (
     <div ref={ref} className="relative w-full max-w-xs sm:max-w-sm">
-      <div className="relative bg-white sm:p-12 p-8 rounded-lg shadow-xl flex flex-col gap-3">
+      <div className="relative bg-white sm:p-12 p-8  drop-shadow-xl flex flex-col gap-3">
         {images.map((image, index) => (
           <img
             key={index}
@@ -22,7 +22,7 @@ const FrameBasic = React.forwardRef<HTMLDivElement, { images: string[] }>(
 const FrameDesain = React.forwardRef<HTMLDivElement, { images: string[] }>(
   ({ images }, ref) => (
     <div ref={ref} className="relative w-full max-w-xs sm:max-w-sm">
-      <div className="relative bg-[linear-gradient(180deg,_#13B2BE_7.21%,_#FFFFFF_75.48%)] sm:p-12 p-8 rounded-lg shadow-xl flex flex-col gap-3">
+      <div className="relative bg-[linear-gradient(180deg,_#13B2BE_7.21%,_#FFFFFF_75.48%)] sm:p-12 p-8  drop-shadow-xl flex flex-col gap-3">
         <img
           src={'/assets/photoresult/ornamentRight.png'}
           alt="Ornament Pattern Kanan"
@@ -397,22 +397,22 @@ const PhotoResult: React.FC = () => {
       <div className="flex items-center justify-center gap-4 sm:gap-8 transform scale-75 sm:scale-90">
         <div
           onClick={() => !isProcessing && setSelectedFrame('desain')}
-          className={`rounded-xl sm:rotate-0 rotate-[-10deg] cursor-pointer transition-all hover:drop-shadow-xl transition-transform duration-500 hover:scale-105 ${selectedFrame === 'desain' ? 'ring-6 ring-offset-0 ring-blue-500  z-10' : 'opacity-100'}`}
+          className={`sm:rotate-0 rotate-[-10deg] cursor-pointer transition-all drop-shadow-[5vw] transition-transform duration-500 hover:scale-105 ${selectedFrame === 'desain' ? 'ring-6 ring-offset-0 ring-blue-500  z-10' : 'opacity-100'}`}
         >
           <FrameDesain images={capturedImages} />
         </div>
         <div
           onClick={() => !isProcessing && setSelectedFrame('basic')}
-          className={`rounded-xl sm:rotate-0 rotate-[8deg] sm:translate-y-0 -translate-y-10 cursor-pointer transition-all hover:drop-shadow-xl transition-transform duration-500 hover:scale-105 ${selectedFrame === 'basic' ? 'ring-6 ring-offset-0 ring-blue-500  z-20 translate-y-0' : 'opacity-100'}`}
+          className={`sm:rotate-0 rotate-[8deg] sm:translate-y-0 -translate-y-10 cursor-pointer transition-all drop-shadow-[5vw] transition-transform duration-500 hover:scale-105 ${selectedFrame === 'basic' ? 'ring-6 ring-offset-0 ring-blue-500  z-20 translate-y-0' : 'opacity-100'}`}
         >
           <FrameBasic images={capturedImages} />
         </div>
       </div>
 
-      <div className="text-center  sm:block hidden">
-        <div className="relative">
+      <div className="text-center flex flex-col  w-full sm:block hidden">
+        <div className="relative mt-[-2vw]">
           <h5
-            className="absolute w-full left-0 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold"
+            className="absolute w-full left-0 text-[clamp(7vw,9vw,10rem)] font-extrabold"
             style={{
               WebkitTextStroke: '2px white',
               color: 'transparent',
@@ -422,7 +422,7 @@ const PhotoResult: React.FC = () => {
             Wala! Fotomu jadi!
           </h5>
           <h5
-            className="relative text-4xl sm:text-6xl h-[11vw] md:text-7xl lg:text-8xl font-extrabold bg-clip-text text-transparent"
+            className="relative text-[clamp(7vw,9vw,10rem)]  h-[15vw]  font-extrabold bg-clip-text text-transparent"
             style={{
               background:
                 'linear-gradient(90.01deg, #1D5D77 0%, #4FC5CE 108.39%)',
@@ -434,7 +434,7 @@ const PhotoResult: React.FC = () => {
           </h5>
         </div>
         <p
-          className="text-lg sm:text-2xl md:text-4xl lg:mt-[-2vw] mb-2 text-[#1D5D77] font-extrabold"
+          className="  text-[clamp(3vw,3vw,5rem)]  mt-[-3vw] mb-[2vw] text-[#1D5D77] font-extrabold"
           style={{ WebkitTextStroke: '0.6px white' }}
         >
           Sekarang pilih frame, bukan nasib!
@@ -444,7 +444,7 @@ const PhotoResult: React.FC = () => {
       <Button
         onClick={downloadFrameAsImage}
         disabled={capturedImages.length === 0 || isProcessing}
-        className="text-xl md:text-2xl font-extrabold h-14 px-10 cursor-pointer"
+        className="text-xl md:text-2xl font-extrabold h-14 mt-[2vw] px-10 cursor-pointer"
       >
         {isProcessing ? 'Memproses...' : 'Download'}
       </Button>
