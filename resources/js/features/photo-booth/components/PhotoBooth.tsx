@@ -254,7 +254,7 @@ const PhotoBooth: React.FC<PhotoBoothProps> = ({
         <Button
           variant="secondary"
           onClick={onRepeatSession}
-          className="py-4 md:py-6 px-8 text-sm md:text-xl font-semibold w-full md:w-fit"
+          className="py-4 md:py-6 px-8 text-sm md:text-xl font-semibold w-full md:w-fit cursor-pointer"
         >
           Ulangi
         </Button>
@@ -263,7 +263,7 @@ const PhotoBooth: React.FC<PhotoBoothProps> = ({
         <Button
           variant="default"
           onClick={onNext}
-          className="py-4 md:py-6 px-8 text-sm md:text-xl font-semibold w-full md:w-fit"
+          className="py-4 md:py-6 px-8 text-sm md:text-xl font-semibold w-full md:w-fit cursor-pointer"
         >
           Selanjutnya
         </Button>
@@ -338,7 +338,7 @@ const PhotoBooth: React.FC<PhotoBoothProps> = ({
 
       <div className="flex flex-col md:flex-row w-full 2xl:max-w-4xl xl:max-w-4xl max-w-sm md:px-0 lg:max-w-xl md:max-w-xl gap-4">
         <div
-          className={`md:w-10/12 w-full flex-col items-center justify-center ${
+          className={`md:w-11/12 w-full flex-col items-center justify-center ${
             isMobile && isSessionComplete && !isRetakingPhoto
               ? 'hidden'
               : 'flex'
@@ -380,7 +380,7 @@ const PhotoBooth: React.FC<PhotoBoothProps> = ({
               <Button
                 onClick={onStartCaptureSession}
                 disabled={!stream || isLoading}
-                className="py-6 px-8 rounded-lg w-full md:w-fit text-sm md:text-xl font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                className="py-6 px-8 rounded-lg w-full md:w-fit text-sm md:text-xl font-semibold disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               >
                 {capturedImages.length > 0 ? 'Lanjut Foto' : 'Mulai Foto'}
               </Button>

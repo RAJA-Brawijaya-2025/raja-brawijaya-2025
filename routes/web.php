@@ -20,6 +20,9 @@ Route::get('/coming-soon', function () {
 Route::get('/photo-booth', function () {
     return Inertia::render('PhotoBooth');
 });
+Route::get('/photo-result', function () {
+    return Inertia::render('PhotoResult');
+});
 Route::get('/dev', function () {
     return Inertia::render('dev/Dev');
 });
