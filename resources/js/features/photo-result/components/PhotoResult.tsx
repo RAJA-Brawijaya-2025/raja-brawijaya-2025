@@ -2,18 +2,58 @@ import React, { useEffect, useState } from 'react';
 import { Button } from '@/shared/components/ui/button';
 import { imageToBase64 } from '@/shared/lib/utils';
 
-const FrameBasic = React.forwardRef<HTMLDivElement, { images: string[] }>(
+const FrameDesain2 = React.forwardRef<HTMLDivElement, { images: string[] }>(
   ({ images }, ref) => (
     <div ref={ref} className="relative w-full max-w-xs sm:max-w-sm">
-      <div className="relative bg-white sm:p-12 p-8  drop-shadow-xl flex flex-col gap-3">
+      <div className="relative bg-[linear-gradient(180deg,_#13B2BE_7.21%,_#FFFFFF_75.48%)] sm:p-12 p-8  drop-shadow-xl flex flex-col gap-3">
+        <img
+          src={'/assets/photoresult/ornamentRight.png'}
+          alt="Ornament Pattern Kanan"
+          className="absolute top-[20%] right-0 w-[50%] -translate-y-1/2 z-10"
+        />
+        <img
+          src={'/assets/photoresult/ornamentLeft.svg'}
+          alt="Ornament Pattern Kiri"
+          className="absolute bottom-[10%] left-0 w-[25%] -translate-y-1/2 z-10"
+        />
+        <img
+          src={'/assets/photoresult/ornamentLeftBot.svg'}
+          alt="Ornament Pattern Kiri Bawah"
+          className="absolute bottom-[20%] left-0 w-[25%] -translate-y-1/2 z-10"
+        />
+        <img
+          src={'/assets/photoresult/ornamentBottom.svg'}
+          alt="Ornament Pattern Bawah"
+          className="absolute bottom-0 left-1/2 w-[60%] -translate-x-1/2 z-10"
+        />
         {images.map((image, index) => (
           <img
             key={index}
             src={image}
             alt={`Photo ${index + 1}`}
-            className="w-full h-auto object-cover rounded-md"
+            className="w-full h-auto object-cover rounded-md relative z-20"
           />
         ))}
+        <img
+          src={'/assets/photoresult/mahkotaFrame2.png'}
+          alt="Mahkota"
+          className="absolute top-0 left-1/2 w-[60%] -translate-x-1/2 -mt-[3%] z-30"
+        />
+        <img
+          src={'/assets/photoresult/ornamentBotFrame2.png'}
+          alt="Dekorasi Bawah"
+          className="absolute bottom-[-2%] left-1/2 w-[90%] -translate-x-1/2 z-30"
+        />
+        <img
+          src={'/assets/photoresult/imageRight.png'}
+          alt="Dekorasi Kanan"
+          className="absolute top-[40%] right-0 w-[25%] -translate-y-1/2 z-30"
+        />
+        <img
+          src={'/assets/photoresult/imageLeft.png'}
+          alt="Dekorasi Kiri"
+          className="absolute bottom-0 left-0 w-[25%] -translate-y-1/2 z-30"
+        />
       </div>
     </div>
   ),
@@ -199,39 +239,57 @@ const PhotoResult: React.FC = () => {
         capturedImages.map((url) => imageToBase64(url)),
       );
 
-      const foregroundOrnamentPaths = {
+      // Definisikan path aset untuk KEDUA frame
+      const frame1ForegroundPaths = {
         comingSoon: '/assets/photoresult/comingSoon.png',
         imageBawah: '/assets/photoresult/imageBawah.png',
         imageRight: '/assets/photoresult/imageRight.png',
         imageLeft: '/assets/photoresult/imageLeft.png',
       };
 
-      const backgroundOrnamentPaths = {
+      const frame1BackgroundPaths = {
         ornamentLeft: '/assets/photoresult/ornamentLeft.svg',
         ornamentRight: '/assets/photoresult/ornamentRight.png',
-        ornamenLeftBot: '/assets/photoresult/ornamenLeftBot.svg',
+        ornamenLeftBot: '/assets/photoresult/ornamentLeftBot.svg', // Koreksi typo dari kode asli
         ornamentBottom: '/assets/photoresult/ornamentBottom.svg',
       };
 
+      const frame2ForegroundPaths = {
+        mahkota: '/assets/photoresult/mahkotaFrame2.png',
+        ornamentBot: '/assets/photoresult/ornamentBotFrame2.png',
+        imageRight: '/assets/photoresult/imageRight.png',
+        imageLeft: '/assets/photoresult/imageLeft.png',
+      };
+
+      const frame2BackgroundPaths = frame1BackgroundPaths;
       const base64Foregrounds: any = {};
       const base64Backgrounds: any = {};
 
       if (selectedFrame === 'desain') {
         await Promise.all([
-          ...Object.entries(foregroundOrnamentPaths).map(
-            async ([key, path]) => {
-              base64Foregrounds[key] = await imageToBase64(path).catch(
-                () => null,
-              );
-            },
-          ),
-          ...Object.entries(backgroundOrnamentPaths).map(
-            async ([key, path]) => {
-              base64Backgrounds[key] = await imageToBase64(path).catch(
-                () => null,
-              );
-            },
-          ),
+          ...Object.entries(frame1ForegroundPaths).map(async ([key, path]) => {
+            base64Foregrounds[key] = await imageToBase64(path).catch(
+              () => null,
+            );
+          }),
+          ...Object.entries(frame1BackgroundPaths).map(async ([key, path]) => {
+            base64Backgrounds[key] = await imageToBase64(path).catch(
+              () => null,
+            );
+          }),
+        ]);
+      } else {
+        await Promise.all([
+          ...Object.entries(frame2ForegroundPaths).map(async ([key, path]) => {
+            base64Foregrounds[key] = await imageToBase64(path).catch(
+              () => null,
+            );
+          }),
+          ...Object.entries(frame2BackgroundPaths).map(async ([key, path]) => {
+            base64Backgrounds[key] = await imageToBase64(path).catch(
+              () => null,
+            );
+          }),
         ]);
       }
 
@@ -247,46 +305,35 @@ const PhotoResult: React.FC = () => {
       canvas.height = frameHeight * scale;
       ctx.scale(scale, scale);
 
-      const frameRadius = 0;
-      ctx.beginPath();
-      ctx.roundRect(0, 0, frameWidth, frameHeight, frameRadius);
-      ctx.closePath();
+      const gradient = ctx.createLinearGradient(0, 0, 0, frameHeight);
+      gradient.addColorStop(0.0721, '#13B2BE');
+      gradient.addColorStop(0.7548, '#FFFFFF');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, frameWidth, frameHeight);
 
-      if (selectedFrame === 'desain') {
-        const gradient = ctx.createLinearGradient(0, 0, 0, frameHeight);
-        gradient.addColorStop(0.0721, '#13B2BE');
-        gradient.addColorStop(0.7548, '#FFFFFF');
-        ctx.fillStyle = gradient;
-      } else {
-        ctx.fillStyle = '#FFFFFF';
+      if (base64Backgrounds.ornamentRight) {
+        const img = await loadImage(base64Backgrounds.ornamentRight);
+        const w = frameWidth * 0.5;
+        const h = (img.height / img.width) * w;
+        ctx.drawImage(img, frameWidth - w, frameHeight * 0.2 - h / 2, w, h);
       }
-      ctx.fill();
-
-      if (selectedFrame === 'desain' && base64Backgrounds) {
-        if (base64Backgrounds.ornamentRight) {
-          const img = await loadImage(base64Backgrounds.ornamentRight);
-          const w = frameWidth * 0.5;
-          const h = (img.height / img.width) * w;
-          ctx.drawImage(img, frameWidth - w, frameHeight * 0.2 - h / 2, w, h);
-        }
-        if (base64Backgrounds.ornamentLeft) {
-          const img = await loadImage(base64Backgrounds.ornamentLeft);
-          const w = frameWidth * 0.25;
-          const h = (img.height / img.width) * w;
-          ctx.drawImage(img, 0, frameHeight * 0.5 - h / 2, w, h);
-        }
-        if (base64Backgrounds.ornamenLeftBot) {
-          const img = await loadImage(base64Backgrounds.ornamenLeftBot);
-          const w = frameWidth * 0.25;
-          const h = (img.height / img.width) * w;
-          ctx.drawImage(img, 0, frameHeight * 0.8 - h / 2, w, h);
-        }
-        if (base64Backgrounds.ornamentBottom) {
-          const img = await loadImage(base64Backgrounds.ornamentBottom);
-          const w = frameWidth * 0.6;
-          const h = (img.height / img.width) * w;
-          ctx.drawImage(img, (frameWidth - w) / 2, frameHeight - h, w, h);
-        }
+      if (base64Backgrounds.ornamentLeft) {
+        const img = await loadImage(base64Backgrounds.ornamentLeft);
+        const w = frameWidth * 0.25;
+        const h = (img.height / img.width) * w;
+        ctx.drawImage(img, 0, frameHeight * 0.5 - h / 2, w, h);
+      }
+      if (base64Backgrounds.ornamenLeftBot) {
+        const img = await loadImage(base64Backgrounds.ornamenLeftBot);
+        const w = frameWidth * 0.25;
+        const h = (img.height / img.width) * w;
+        ctx.drawImage(img, 0, frameHeight * 0.8 - h / 2, w, h);
+      }
+      if (base64Backgrounds.ornamentBottom) {
+        const img = await loadImage(base64Backgrounds.ornamentBottom);
+        const w = frameWidth * 0.6;
+        const h = (img.height / img.width) * w;
+        ctx.drawImage(img, (frameWidth - w) / 2, frameHeight - h, w, h);
       }
 
       const padding = 48;
@@ -308,7 +355,7 @@ const PhotoResult: React.FC = () => {
         currentY += photoHeight + gap;
       }
 
-      if (selectedFrame === 'desain' && base64Foregrounds) {
+      if (selectedFrame === 'desain') {
         if (base64Foregrounds.comingSoon) {
           const img = await loadImage(base64Foregrounds.comingSoon);
           const w = frameWidth * 0.6;
@@ -321,19 +368,34 @@ const PhotoResult: React.FC = () => {
           const h = (img.height / img.width) * w;
           ctx.drawImage(img, 0, frameHeight - h * 0.98, w, h);
         }
-        if (base64Foregrounds.imageRight) {
-          const img = await loadImage(base64Foregrounds.imageRight);
-          const w = frameWidth * 0.25;
+      } else {
+        if (base64Foregrounds.mahkota) {
+          const img = await loadImage(base64Foregrounds.mahkota);
+          const w = frameWidth * 0.6;
           const h = (img.height / img.width) * w;
-          ctx.drawImage(img, frameWidth - w, frameHeight * 0.4 - h / 2, w, h);
+          ctx.drawImage(img, (frameWidth - w) / 2, -frameHeight * 0.01, w, h);
         }
-        if (base64Foregrounds.imageLeft) {
-          const img = await loadImage(base64Foregrounds.imageLeft);
-          const w = frameWidth * 0.25;
+        if (base64Foregrounds.ornamentBot) {
+          const img = await loadImage(base64Foregrounds.ornamentBot);
+          const w = frameWidth * 0.9;
           const h = (img.height / img.width) * w;
-          ctx.drawImage(img, 0, frameHeight * 0.6 - h / 2, w, h);
+          ctx.drawImage(img, (frameWidth - w) / 2, frameHeight - h * 0.9, w, h);
         }
       }
+
+      if (base64Foregrounds.imageRight) {
+        const img = await loadImage(base64Foregrounds.imageRight);
+        const w = frameWidth * 0.25;
+        const h = (img.height / img.width) * w;
+        ctx.drawImage(img, frameWidth - w, frameHeight * 0.4 - h / 2, w, h);
+      }
+      if (base64Foregrounds.imageLeft) {
+        const img = await loadImage(base64Foregrounds.imageLeft);
+        const w = frameWidth * 0.25;
+        const h = (img.height / img.width) * w;
+        ctx.drawImage(img, 0, frameHeight * 0.6 - h / 2, w, h);
+      }
+
       const uniqueId = Date.now();
       const finalImage = canvas.toDataURL('image/png', 1.0);
       const link = document.createElement('a');
@@ -405,7 +467,7 @@ const PhotoResult: React.FC = () => {
           onClick={() => !isProcessing && setSelectedFrame('basic')}
           className={`sm:rotate-0 rotate-[8deg] sm:translate-y-0 -translate-y-10 cursor-pointer transition-all drop-shadow-[5vw] transition-transform duration-500 hover:scale-105 ${selectedFrame === 'basic' ? 'ring-6 ring-offset-0 ring-blue-500  z-20 translate-y-0' : 'opacity-100'}`}
         >
-          <FrameBasic images={capturedImages} />
+          <FrameDesain2 images={capturedImages} />
         </div>
       </div>
 
