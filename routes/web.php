@@ -26,6 +26,9 @@ Route::get('/photo-result', function () {
 Route::get('/dev', function () {
     return Inertia::render('dev/Dev');
 });
+Route::get('/{any}', function () {
+    return Inertia::render('EmpatNolEmpat');
+});
 
 
 Route::get('/dashboard', function () {
