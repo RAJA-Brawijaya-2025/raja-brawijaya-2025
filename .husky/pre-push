@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Running pre-push checks..."
+
+# Run linting
+echo "Running linter..."
+npm run lint
+if [ $? -ne 0 ]; then
+    echo "❌ Linting failed. Please fix the issues before pushing."
+    exit 1
+fi
+
+# Run type checking
+echo "Running type check..."
+npx tsc --noEmit
+if [ $? -ne 0 ]; then
+    echo "❌ Type checking failed. Please fix the type errors before pushing."
+    exit 1
+fi
+
+# Run build check (optional, but recommended)
+echo "Running build check..."
+npm run build
+if [ $? -ne 0 ]; then
+    echo "❌ Build failed. Please fix the build issues before pushing."
+    exit 1
+fi
+
+echo "✅ All pre-push checks passed!"
