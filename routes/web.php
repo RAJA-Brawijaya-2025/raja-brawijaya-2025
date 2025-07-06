@@ -14,9 +14,22 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/comingsoon', function () {
+Route::get('/coming-soon', function () {
     return Inertia::render('Comingsoon');
 });
+Route::get('/photo-booth', function () {
+    return Inertia::render('PhotoBooth');
+});
+Route::get('/photo-result', function () {
+    return Inertia::render('PhotoResult');
+});
+Route::get('/dev', function () {
+    return Inertia::render('dev/Dev');
+});
+Route::get('/{any}', function () {
+    return Inertia::render('EmpatNolEmpat');
+});
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
