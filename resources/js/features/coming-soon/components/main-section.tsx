@@ -15,12 +15,12 @@ const Main = () => {
           className="absolute left-0 object-contain w-1/4 duration-500 ease-in-out bottom-14 -rotate-12 hover:rotate-0"
         />
         <img
-          src="/assets/comingsoon/foto.png"
+          src="/assets/comingsoon/foto-dua.png"
           alt="foto"
           className="absolute top-20 object-contain w-1/12 duration-500 ease-in-out left-[28%] rotate-[20deg] hover:rotate-0 blur-[3px]"
         />
         <img
-          src="/assets/comingsoon/foto.png"
+          src="/assets/comingsoon/foto-dua.png"
           alt="foto"
           className="absolute object-contain w-1/5 duration-500 ease-in-out hover:rotate-0 -right-12 bottom-28 rotate-12 blur-[1px]"
         />
@@ -70,7 +70,7 @@ const Main = () => {
           </p>
           <div className="mb-12">
             <img
-              src="/assets/comingsoon/textCenter.svg"
+              src="/assets/comingsoon/text-center.svg"
               alt="text"
               className="mx-auto pointer-events-none select-none"
             />
