@@ -2,8 +2,6 @@ import '../css/app.css';
 import './bootstrap';
 
 import React from 'react';
-import { Provider } from 'react-redux';
-import { store } from './shared/store';
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot } from 'react-dom/client';
@@ -23,15 +21,10 @@ createInertiaApp({
   setup({ el, App, props }) {
     createRoot(el).render(
       <React.StrictMode>
-        <Provider store={store}>
-          {' '}
-          {/* <-- BUNGKUS DI SINI */}
-          <QueryClientProvider client={queryClient}>
-            <App {...props} />
-            <ReactQueryDevtools initialIsOpen={false} />
-          </QueryClientProvider>
-        </Provider>{' '}
-        {/* <-- TUTUP BUNGKUSNYA */}
+        <QueryClientProvider client={queryClient}>
+          <App {...props} />
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
       </React.StrictMode>,
     );
   },
