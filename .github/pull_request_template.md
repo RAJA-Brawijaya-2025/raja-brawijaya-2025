@@ -1,8 +1,8 @@
-# Feature Pull Request
+# Pull Request
 
 ## Description
 
-A concise summary of the feature being implemented. Include relevant context, problem statement, and high-level design decisions.
+A concise summary of the feature/bugfix being implemented. Include relevant context, problem statement, and high-level design decisions.
 
 ## Implementation Details
 
@@ -25,6 +25,8 @@ Provide a technical breakdown of the implementation, including:
 
 - Closes #<id_issues>
 - Specification or requirement reference: [link] (optional)
+
+## Screenshots (if applicable)
 
 ## Additional Notes
 
