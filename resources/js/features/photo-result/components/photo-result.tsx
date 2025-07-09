@@ -148,7 +148,7 @@ function CustomPopup({
       style={{ backgroundColor: 'rgba(0, 0, 0, 0.0)' }}
     >
       <div
-        className={`bg-white p-12 rounded-2xl shadow-2xl text-center max-w-sm w-full transition-all duration-1000 ease-out 
+        className={`bg-white p-12 rounded-2xl shadow-2xl text-center max-w-sm w-full transition-all duration-1000 ease-out
                              border-2 border-[#1D5D77]
                              ${
                                isShowing
