@@ -11,7 +11,9 @@ export default function Modal({
   show = false,
   maxWidth = '2xl',
   closeable = true,
-  onClose = () => {},
+  onClose = () => {
+    /* akalin ae wak */
+  },
 }: PropsWithChildren<{
   show: boolean;
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
