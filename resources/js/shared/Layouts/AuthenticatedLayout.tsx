@@ -95,6 +95,8 @@ export default function Authenticated({
                   fill="none"
                   viewBox="0 0 24 24"
                 >
+                  {' '}
+                  <title>Ikon svg</title>
                   <path
                     className={
                       !showingNavigationDropdown ? 'inline-flex' : 'hidden'

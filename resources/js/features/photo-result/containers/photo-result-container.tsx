@@ -1,4 +1,3 @@
-import { Head } from '@inertiajs/react';
 import RabrawHead from '../components/rabraw-head';
 import Ornaments from '../components/Ornaments';
 import Awan from '../components/Awan';
