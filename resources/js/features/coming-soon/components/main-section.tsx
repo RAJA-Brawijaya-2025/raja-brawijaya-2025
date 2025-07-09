@@ -1,3 +1,4 @@
+import { Button } from '@/shared/components/ui/button';
 import { motion } from 'framer-motion';
 
 const Main = () => {
@@ -75,14 +76,15 @@ const Main = () => {
               className="mx-auto pointer-events-none select-none"
             />
           </div>
-          <button
+          <Button
             onClick={() => {
               window.location.href = '/photo-booth';
             }}
-            className="mx-auto flex w-[210px]  h-[55px] px-9 py-[14.5px] justify-center items-center gap-2 rounded-2xl bg-gradient-to-l from-[#7FCCCC] to-[#13B2BE] shadow-[inset_-4px_4px_7px_0px_rgba(255,255,255,0.5),0px_0px_18.5px_0px_#0C4C66] cursor-[url('/assets/cursor/photobooth-cursor.svg'),_auto]"
+            variant="alt"
+            className="mx-auto cursor-[url('/assets/cursor/photobooth-cursor.svg'),_auto] px-8 py-6"
           >
             <p className="text-2xl font-extrabold text-white">Klik disini !</p>
-          </button>
+          </Button>
         </div>
       </motion.section>
       <style />
