@@ -11,7 +11,7 @@ const ComingSoon = () => {
         <img
           src="/assets/comingsoon/center.png"
           alt="bg"
-          className="absolute inset-0 object-contain object-center w-full h-full scale-75"
+          className="absolute inset-0 object-contain object-center w-full h-full scale-90 md:scale-75"
         />
         <CloudFrame />
         <Loader />
