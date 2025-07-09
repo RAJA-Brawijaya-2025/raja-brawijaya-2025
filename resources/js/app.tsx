@@ -8,7 +8,7 @@ import { createRoot } from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const _appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 const queryClient = new QueryClient();
 

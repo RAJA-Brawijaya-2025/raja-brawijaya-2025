@@ -4,14 +4,16 @@ import {
   Transition,
   TransitionChild,
 } from '@headlessui/react';
-import type { PropsWithChildren } from 'react';
+import { useId, type PropsWithChildren } from 'react';
 
 export default function Modal({
   children,
   show = false,
   maxWidth = '2xl',
   closeable = true,
-  onClose = () => {},
+  onClose = () => {
+    /* akalin ae wak */
+  },
 }: PropsWithChildren<{
   show: boolean;
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
@@ -31,7 +33,6 @@ export default function Modal({
     xl: 'sm:max-w-xl',
     '2xl': 'sm:max-w-2xl',
   }[maxWidth];
-
   return (
     <Transition show={show} leave="duration-200">
       <Dialog

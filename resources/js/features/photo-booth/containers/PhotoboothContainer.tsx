@@ -14,8 +14,6 @@ const PhotoboothContainer = () => {
     isCapturing,
     remainingShots,
     timerDuration,
-    isSessionComplete,
-    hasPhotos,
     videoRef,
     canvasRef,
     isRetakingPhoto,
@@ -28,7 +26,6 @@ const PhotoboothContainer = () => {
     downloadAllPhotos,
     clearPhotos,
     handleTimerDurationChange,
-    stopCamera,
     retryCamera,
   } = usePhotoBooth();
 
@@ -39,6 +36,7 @@ const PhotoboothContainer = () => {
 
   return (
     <main className="photo-booth-bg w-full min-h-screen p-2 relative">
+      <Head title="Photo Booth" />
       <RabrawHead />
       <Awan />
       <Ornaments />

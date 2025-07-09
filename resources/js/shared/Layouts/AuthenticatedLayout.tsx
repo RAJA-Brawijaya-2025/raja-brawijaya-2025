@@ -3,7 +3,8 @@ import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link, usePage } from '@inertiajs/react';
-import { PropsWithChildren, ReactNode, useState } from 'react';
+import { useState } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 
 export default function Authenticated({
   header,
@@ -95,6 +96,8 @@ export default function Authenticated({
                   fill="none"
                   viewBox="0 0 24 24"
                 >
+                  {' '}
+                  <title>Ikon svg</title>
                   <path
                     className={
                       !showingNavigationDropdown ? 'inline-flex' : 'hidden'
