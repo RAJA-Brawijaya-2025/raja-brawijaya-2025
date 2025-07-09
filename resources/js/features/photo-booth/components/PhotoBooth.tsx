@@ -1,5 +1,6 @@
 import { Button } from '@/shared/components/ui/button';
-import React, { useEffect, useState } from 'react';
+import type React from 'react';
+import { useEffect, useState } from 'react';
 
 interface PhotoBoothProps {
   stream: MediaStream | null;
@@ -86,6 +87,7 @@ const PhotoBooth: React.FC<PhotoBoothProps> = ({
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
+                <title>Ikon Peringatan</title>
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -137,6 +139,7 @@ const PhotoBooth: React.FC<PhotoBoothProps> = ({
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
+              <title>Ikon Tidak Ada Foto/Galeri Kosong</title>
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -201,9 +204,10 @@ const PhotoBooth: React.FC<PhotoBoothProps> = ({
         {Array.from({ length: 3 }).map((_, index) => {
           const img = capturedImages[index];
           return (
-            <div
+            <button
               key={`photo-slot-${index}`}
               onClick={img ? getPhotoClickHandler(index) : undefined}
+              type="button"
               className={`aspect-video group transition-all bg-primary-100 border border-primary-300 rounded-lg relative overflow-hidden flex items-center justify-center ${
                 img ? 'cursor-pointer hover:ring-blue-400' : ''
               } ${
@@ -228,7 +232,7 @@ const PhotoBooth: React.FC<PhotoBoothProps> = ({
                   )}
                 </>
               ) : (
-                <div className="">
+                <div>
                   <img
                     src="/assets/photobooth/imgkosong.png"
                     alt=""
@@ -241,7 +245,7 @@ const PhotoBooth: React.FC<PhotoBoothProps> = ({
                   Foto ulang
                 </div>
               )}
-            </div>
+            </button>
           );
         })}
       </div>
@@ -372,6 +376,7 @@ const PhotoBooth: React.FC<PhotoBoothProps> = ({
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                     >
+                      <title>Panah dropdown</title>
                       <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                     </svg>
                   </div>

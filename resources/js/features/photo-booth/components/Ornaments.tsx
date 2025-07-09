@@ -2,7 +2,7 @@ const Ornaments = () => {
   return (
     <>
       {/* INI YANG DESKTOP / LAPTOP */}
-      <div className="w-full h-full hidden sm:flex flex justify-between items-end absolute left-0 right-0 top-0">
+      <div className="w-full h-full hidden sm:flex justify-between items-end absolute left-0 right-0 top-0">
         <div>
           <img
             src="/assets/photobooth/ornament.png"

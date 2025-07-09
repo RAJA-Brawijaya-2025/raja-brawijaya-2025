@@ -30,12 +30,12 @@ const Ornaments = () => {
         </div>
         {/* Mobile */}
         <img
-          src="/assets/photoresult/ornamentMobile.png"
+          src="/assets/photoresult/ornament-mobile.png"
           alt="Mobile"
           className="sm:hidden w-2/3 overflow-hidden "
         />
         <img
-          src="/assets/photoresult/ornamentMobile.png"
+          src="/assets/photoresult/ornament-mobile.png"
           alt="Mobile"
           className="sm:hidden scale-x-[-1] w-2/3 overflow-hidden "
         />

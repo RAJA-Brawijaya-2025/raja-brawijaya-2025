@@ -2,15 +2,13 @@ import '../css/app.css';
 import './bootstrap';
 
 import React from 'react';
-import { Provider } from 'react-redux';
-import { store } from './shared/store';
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot } from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const _appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 const queryClient = new QueryClient();
 
@@ -23,15 +21,10 @@ createInertiaApp({
   setup({ el, App, props }) {
     createRoot(el).render(
       <React.StrictMode>
-        <Provider store={store}>
-          {' '}
-          {/* <-- BUNGKUS DI SINI */}
-          <QueryClientProvider client={queryClient}>
-            <App {...props} />
-            <ReactQueryDevtools initialIsOpen={false} />
-          </QueryClientProvider>
-        </Provider>{' '}
-        {/* <-- TUTUP BUNGKUSNYA */}
+        <QueryClientProvider client={queryClient}>
+          <App {...props} />
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
       </React.StrictMode>,
     );
   },

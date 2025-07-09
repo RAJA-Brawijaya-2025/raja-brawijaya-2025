@@ -247,9 +247,13 @@ export const usePhotoBooth = () => {
   useEffect(() => {
     const handleVisibility = () => {
       if (document.hidden) {
-        streamRef.current?.getTracks().forEach((t) => (t.enabled = false));
+        streamRef.current?.getTracks().forEach((t) => {
+          t.enabled = false;
+        });
       } else {
-        streamRef.current?.getTracks().forEach((t) => (t.enabled = true));
+        streamRef.current?.getTracks().forEach((t) => {
+          t.enabled = true;
+        });
       }
     };
 
