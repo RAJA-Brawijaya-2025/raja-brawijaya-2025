@@ -4,7 +4,7 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/shared/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
-import { useId, type FormEventHandler } from 'react';
+import type { FormEventHandler } from 'react';
 
 export default function Register() {
   const { data, setData, post, processing, errors, reset } = useForm({
@@ -21,7 +21,6 @@ export default function Register() {
       onFinish: () => reset('password', 'password_confirmation'),
     });
   };
-  const textInputId = useId();
 
   return (
     <GuestLayout>
@@ -32,7 +31,7 @@ export default function Register() {
           <InputLabel htmlFor="name" value="Name" />
 
           <TextInput
-            id={textInputId}
+            id="name"
             name="name"
             value={data.name}
             className="mt-1 block w-full"

@@ -5,7 +5,7 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/shared/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
-import { useId, type FormEventHandler } from 'react';
+import type { FormEventHandler } from 'react';
 
 export default function Login({
   status,
@@ -27,7 +27,6 @@ export default function Login({
       onFinish: () => reset('password'),
     });
   };
-  const textInputId = useId();
 
   return (
     <GuestLayout>
@@ -42,7 +41,7 @@ export default function Login({
           <InputLabel htmlFor="email" value="Email" />
 
           <TextInput
-            id={textInputId}
+            id="email"
             type="email"
             name="email"
             value={data.email}

@@ -33,12 +33,11 @@ export default function Modal({
     xl: 'sm:max-w-xl',
     '2xl': 'sm:max-w-2xl',
   }[maxWidth];
-  const modalId = useId();
   return (
     <Transition show={show} leave="duration-200">
       <Dialog
         as="div"
-        id={modalId}
+        id="modal"
         className="fixed inset-0 z-50 flex transform items-center overflow-y-auto px-4 py-6 transition-all sm:px-0"
         onClose={close}
       >

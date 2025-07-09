@@ -3,7 +3,7 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/shared/Layouts/GuestLayout';
 import { Head, useForm } from '@inertiajs/react';
-import { useId, type FormEventHandler } from 'react';
+import type { FormEventHandler } from 'react';
 
 export default function ForgotPassword({ status }: { status?: string }) {
   const { data, setData, post, processing, errors } = useForm({
@@ -15,7 +15,6 @@ export default function ForgotPassword({ status }: { status?: string }) {
 
     post(route('password.email'));
   };
-  const textInputId = useId();
 
   return (
     <GuestLayout>
@@ -33,7 +32,7 @@ export default function ForgotPassword({ status }: { status?: string }) {
 
       <form onSubmit={submit}>
         <TextInput
-          id={textInputId}
+          id="email"
           type="email"
           name="email"
           value={data.email}

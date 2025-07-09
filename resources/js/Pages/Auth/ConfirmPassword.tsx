@@ -4,7 +4,7 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/shared/Layouts/GuestLayout';
 import { Head, useForm } from '@inertiajs/react';
-import { useId, type FormEventHandler } from 'react';
+import type { FormEventHandler } from 'react';
 
 export default function ConfirmPassword() {
   const { data, setData, post, processing, errors, reset } = useForm({
@@ -18,7 +18,6 @@ export default function ConfirmPassword() {
       onFinish: () => reset('password'),
     });
   };
-  const textInputId = useId();
 
   return (
     <GuestLayout>
@@ -34,7 +33,7 @@ export default function ConfirmPassword() {
           <InputLabel htmlFor="password" value="Password" />
 
           <TextInput
-            id={textInputId}
+            id="password"
             type="password"
             name="password"
             value={data.password}
