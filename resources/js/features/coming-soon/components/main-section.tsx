@@ -13,31 +13,31 @@ const Main = () => {
         <img
           src="/assets/comingsoon/foto.png"
           alt="foto"
-          className="absolute left-0 object-contain w-1/4 duration-500 ease-in-out bottom-14 -rotate-12 hover:rotate-0"
+          className="absolute left-4 md:left-0 object-contain w-1/4 duration-500 ease-in-out top-[43%] md:bottom-14 -rotate-12 hover:rotate-0"
         />
         <img
           src="/assets/comingsoon/foto-dua.png"
           alt="foto"
-          className="absolute top-20 object-contain w-1/12 duration-500 ease-in-out left-[28%] rotate-[20deg] hover:rotate-0 blur-[3px]"
+          className="hidden md:absolute top-20 object-contain w-1/12 duration-500 ease-in-out left-[28%] rotate-[20deg] hover:rotate-0 blur-[3px]"
         />
         <img
           src="/assets/comingsoon/foto-dua.png"
           alt="foto"
-          className="absolute object-contain w-1/5 duration-500 ease-in-out hover:rotate-0 -right-12 bottom-28 rotate-12 blur-[1px]"
+          className="absolute object-contain w-1/5 duration-500 ease-in-out hover:rotate-0 right-4 md:-right-12 top-[45%] md:bottom-28 rotate-12 blur-[1px]"
         />
         <img
           src="/assets/comingsoon/foto.png"
           alt="foto"
-          className="absolute object-contain w-32 duration-500 ease-in-out right-[20%] top-32 -rotate-[20deg] hover:rotate-0 blur-[2px]"
+          className="hidden md:absolute object-contain w-32 duration-500 ease-in-out right-[20%] top-32 -rotate-[20deg] hover:rotate-0 blur-[2px]"
         />
-        <div className="flex flex-col max-w-xs px-8 mx-auto font-sora">
+        <div className="flex flex-col max-w-xs px-12 my-16 md:px-8 mx-auto font-sora">
           <img
             src="/assets/comingsoon/mahkota.png"
             alt="mahkota"
             className="mx-14"
           />
           <h1
-            className="text-2xl font-bold text-[#107D8F]"
+            className="text-lg md:text-2xl font-bold text-[#107D8F]"
             style={{
               textShadow: `
                                     1px 1px 0 #fff,
@@ -70,18 +70,41 @@ const Main = () => {
             Cie... nungguin, ya?
           </p>
           <div className="mb-12">
-            <img
-              src="/assets/comingsoon/text-center.svg"
-              alt="text"
-              className="mx-auto pointer-events-none select-none"
-            />
+            {/* <img
+                            src="/assets/comingsoon/text-center.svg"
+                            alt="text"
+                            className="mx-auto pointer-events-none scale-90 md:scale-1 select-none"
+                        /> */}
+            <div className="relative mt-[-2vw] font-sora text-5xl">
+              <h5
+                className="absolute w-full left-0 font-extrabold leading-16"
+                style={{
+                  WebkitTextStroke: '12px white',
+                  color: 'transparent',
+                  filter: 'drop-shadow(2px 3px 4px rgba(0,0,0,0.3))',
+                }}
+              >
+                Dikit lagi jadi, mending foto dulu!
+              </h5>
+              <h5
+                className="relative font-extrabold bg-clip-text text-transparent leading-16"
+                style={{
+                  background:
+                    'linear-gradient(90deg, #1D5D77 0%, #4FC5CE 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                Dikit lagi jadi, mending foto dulu!
+              </h5>
+            </div>
           </div>
           <Button
             onClick={() => {
               window.location.href = '/photo-booth';
             }}
             variant="alt"
-            className="mx-auto cursor-[url('/assets/cursor/photobooth-cursor.svg'),_auto] px-8 py-6"
+            className="mx-auto cursor-[url('/assets/cursor/photobooth-cursor.svg'),_auto] px-8 py-6 rounded-xl"
           >
             <p className="text-2xl font-extrabold text-white">Klik disini !</p>
           </Button>
