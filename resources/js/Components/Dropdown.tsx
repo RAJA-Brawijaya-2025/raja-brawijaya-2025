@@ -1,10 +1,10 @@
 import { Transition } from '@headlessui/react';
-import { InertiaLinkProps, Link } from '@inertiajs/react';
+import { type InertiaLinkProps, Link } from '@inertiajs/react';
 import {
   createContext,
-  Dispatch,
-  PropsWithChildren,
-  SetStateAction,
+  type Dispatch,
+  type PropsWithChildren,
+  type SetStateAction,
   useContext,
   useState,
 } from 'react';
@@ -15,8 +15,12 @@ const DropDownContext = createContext<{
   toggleOpen: () => void;
 }>({
   open: false,
-  setOpen: () => {},
-  toggleOpen: () => {},
+  setOpen: () => {
+    throw new Error('setOpen called outside of DropDownContext.Provider');
+  },
+  toggleOpen: () => {
+    throw new Error('toggleOpen called outside of DropDownContext.Provider');
+  },
 });
 
 const Dropdown = ({ children }: PropsWithChildren) => {
@@ -38,13 +42,34 @@ const Trigger = ({ children }: PropsWithChildren) => {
 
   return (
     <>
-      <div onClick={toggleOpen}>{children}</div>
+      <button
+        onClick={toggleOpen}
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+            e.preventDefault();
+            toggleOpen();
+          }
+        }}
+        aria-expanded={open}
+        aria-haspopup="true"
+      >
+        {children}
+      </button>
 
       {open && (
         <div
           className="fixed inset-0 z-40"
           onClick={() => setOpen(false)}
-        ></div>
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
+              setOpen(false);
+            }
+          }}
+          aria-label="Close dropdown"
+          role="button"
+        />
       )}
     </>
   );
@@ -77,30 +102,33 @@ const Content = ({
   }
 
   return (
-    <>
-      <Transition
-        show={open}
-        enter="transition ease-out duration-200"
-        enterFrom="opacity-0 scale-95"
-        enterTo="opacity-100 scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="opacity-100 scale-100"
-        leaveTo="opacity-0 scale-95"
+    <Transition
+      show={open}
+      enter="transition ease-out duration-200"
+      enterFrom="opacity-0 scale-95"
+      enterTo="opacity-100 scale-100"
+      leave="transition ease-in duration-75"
+      leaveFrom="opacity-100 scale-100"
+      leaveTo="opacity-0 scale-95"
+    >
+      <button
+        className={`absolute z-50 mt-2 rounded-md shadow-lg ${alignmentClasses} ${widthClasses}`}
+        onClick={() => setOpen(false)}
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
+            setOpen(false);
+          }
+        }}
+        aria-label="Close dropdown content"
       >
         <div
-          className={`absolute z-50 mt-2 rounded-md shadow-lg ${alignmentClasses} ${widthClasses}`}
-          onClick={() => setOpen(false)}
+          className={`rounded-md ring-1 ring-black ring-opacity-5 ${contentClasses}`}
         >
-          <div
-            className={
-              `rounded-md ring-1 ring-black ring-opacity-5 ` + contentClasses
-            }
-          >
-            {children}
-          </div>
+          {children}
         </div>
-      </Transition>
-    </>
+      </button>
+    </Transition>
   );
 };
 
