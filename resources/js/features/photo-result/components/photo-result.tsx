@@ -30,7 +30,7 @@ const FrameDesain2 = React.forwardRef<HTMLDivElement, { images: string[] }>(
           <img
             key={index}
             src={image}
-            alt={`Photo ${index + 1}`}
+            alt={`Hasil ${index + 1}`}
             className="w-full h-auto object-cover rounded-md relative z-20"
           />
         ))}
@@ -87,7 +87,7 @@ const FrameDesain = React.forwardRef<HTMLDivElement, { images: string[] }>(
           <img
             key={index}
             src={image}
-            alt={`Photo ${index + 1}`}
+            alt={`Hasil ${index + 1}`}
             className="w-full h-auto object-cover rounded-md relative z-20"
           />
         ))}
@@ -127,8 +127,6 @@ function CustomPopup({
   onClose,
   onConfirm,
 }: CustomPopupProps): React.ReactElement | null {
-  if (!isOpen) return null;
-
   const [isShowing, setIsShowing] = useState(false);
 
   useEffect(() => {
@@ -140,17 +138,23 @@ function CustomPopup({
     }
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  if (!isOpen && !isShowing) return null;
 
   return (
     <div
-      className={`fixed inset-0 backdrop-blur-xs flex justify-center items-center z-50 p-4 transition-opacity duration-1000 ease-in-out font-sora ${isShowing ? 'opacity-100' : 'opacity-0'}`}
+      className={`fixed inset-0 backdrop-blur-xs flex justify-center items-center z-50 p-4 transition-opacity duration-1000 ease-in-out font-sora ${
+        isShowing ? 'opacity-100' : 'opacity-0'
+      }`}
       style={{ backgroundColor: 'rgba(0, 0, 0, 0.0)' }}
     >
       <div
         className={`bg-white p-12 rounded-2xl shadow-2xl text-center max-w-sm w-full transition-all duration-1000 ease-out 
-                           border-2 border-[#1D5D77]
-                           ${isShowing ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
+                             border-2 border-[#1D5D77]
+                             ${
+                               isShowing
+                                 ? 'scale-100 opacity-100'
+                                 : 'scale-95 opacity-0'
+                             }`}
       >
         <h3 className="text-2xl font-bold text-[#0D5C63]">
           Yay! Fotomu cakep!
@@ -239,7 +243,6 @@ function PhotoResult(): React.ReactElement {
         capturedImages.map((url) => imageToBase64(url)),
       );
 
-      // Definisikan path aset untuk KEDUA frame
       const frame1ForegroundPaths = {
         comingSoon: '/assets/photoresult/coming-soon.png',
         imageBawah: '/assets/photoresult/image-bawah.png',
@@ -250,7 +253,7 @@ function PhotoResult(): React.ReactElement {
       const frame1BackgroundPaths = {
         ornamentLeft: '/assets/photoresult/ornament-left.svg',
         ornamentRight: '/assets/photoresult/ornament-right.png',
-        ornamenLeftBot: '/assets/photoresult/ornament-left-bot.svg', // Koreksi typo dari kode asli
+        ornamenLeftBot: '/assets/photoresult/ornament-left-bot.svg',
         ornamentBottom: '/assets/photoresult/ornament-bottom.svg',
       };
 
@@ -457,18 +460,27 @@ function PhotoResult(): React.ReactElement {
       </div>
 
       <div className="flex items-center justify-center gap-4 sm:gap-8 transform scale-75 sm:scale-90">
-        <div
+        <button
+          type="button"
           onClick={() => !isProcessing && setSelectedFrame('desain')}
-          className={`sm:rotate-0 rotate-[-10deg] cursor-pointer transition-all drop-shadow-[5vw] transition-transform duration-500 hover:scale-105 ${selectedFrame === 'desain' ? 'ring-6 ring-offset-0 ring-blue-500  z-10' : 'opacity-100'}`}
+          className={`sm:rotate-0 rotate-[-10deg] cursor-pointer transition-all drop-shadow-[5vw] transition-transform duration-500 hover:scale-105 ${
+            selectedFrame === 'desain'
+              ? 'ring-6 ring-offset-0 ring-blue-500 z-10'
+              : 'opacity-100'
+          }`}
         >
           <FrameDesain images={capturedImages} />
-        </div>
-        <div
+        </button>
+        <button
           onClick={() => !isProcessing && setSelectedFrame('basic')}
-          className={`sm:rotate-0 rotate-[8deg] sm:translate-y-0 -translate-y-10 cursor-pointer transition-all drop-shadow-[5vw] transition-transform duration-500 hover:scale-105 ${selectedFrame === 'basic' ? 'ring-6 ring-offset-0 ring-blue-500  z-20 translate-y-0' : 'opacity-100'}`}
+          className={`sm:rotate-0 rotate-[8deg] sm:translate-y-0 -translate-y-10 cursor-pointer transition-all drop-shadow-[5vw] transition-transform duration-500 hover:scale-105 ${
+            selectedFrame === 'basic'
+              ? 'ring-6 ring-offset-0 ring-blue-500  z-20 translate-y-0'
+              : 'opacity-100'
+          }`}
         >
           <FrameDesain2 images={capturedImages} />
-        </div>
+        </button>
       </div>
 
       <div className="text-center flex flex-col  w-full sm:block hidden">
