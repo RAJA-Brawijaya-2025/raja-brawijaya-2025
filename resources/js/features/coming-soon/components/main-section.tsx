@@ -81,7 +81,7 @@ const Main = () => {
             }}
             className="mx-auto flex w-[210px]  h-[55px] px-9 py-[14.5px] justify-center items-center gap-2 rounded-2xl bg-gradient-to-l from-[#7FCCCC] to-[#13B2BE] shadow-[inset_-4px_4px_7px_0px_rgba(255,255,255,0.5),0px_0px_18.5px_0px_#0C4C66] cursor-[url('/assets/cursor/photobooth-cursor.svg'),_auto]"
           >
-            <p className="text-2xl font-extrabold text-white">Klik disini!</p>
+            <p className="text-2xl font-extrabold text-white">Klik disini !</p>
           </button>
         </div>
       </motion.section>
