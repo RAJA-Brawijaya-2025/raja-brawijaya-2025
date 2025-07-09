@@ -4,7 +4,7 @@ import {
   Transition,
   TransitionChild,
 } from '@headlessui/react';
-import type { PropsWithChildren } from 'react';
+import { useId, type PropsWithChildren } from 'react';
 
 export default function Modal({
   children,
@@ -33,12 +33,12 @@ export default function Modal({
     xl: 'sm:max-w-xl',
     '2xl': 'sm:max-w-2xl',
   }[maxWidth];
-
+  const modalId = useId();
   return (
     <Transition show={show} leave="duration-200">
       <Dialog
         as="div"
-        id="modal"
+        id={modalId}
         className="fixed inset-0 z-50 flex transform items-center overflow-y-auto px-4 py-6 transition-all sm:px-0"
         onClose={close}
       >
