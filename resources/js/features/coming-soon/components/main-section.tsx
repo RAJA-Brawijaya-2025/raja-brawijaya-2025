@@ -85,7 +85,7 @@ const Main = () => {
           </button>
         </div>
       </motion.section>
-      <style></style>
+      <style />
     </main>
   );
 };
