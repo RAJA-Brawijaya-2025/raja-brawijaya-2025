@@ -3,8 +3,8 @@ import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link, usePage } from '@inertiajs/react';
-import { ReactNode, useState } from 'react';
-import type { PropsWithChildren } from 'react';
+import { useState } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 
 export default function Authenticated({
   header,
