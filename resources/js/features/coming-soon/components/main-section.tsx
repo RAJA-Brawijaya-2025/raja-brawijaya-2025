@@ -13,7 +13,7 @@ const Main = () => {
         <img
           src="/assets/comingsoon/foto.png"
           alt="foto"
-          className="absolute left-4 md:left-0 object-contain w-1/4 duration-500 ease-in-out top-[43%] md:bottom-14 -rotate-12 hover:rotate-0"
+          className="absolute left-0 object-contain w-1/4 duration-500 ease-in-out top-[40%] md:bottom-14 -rotate-12 hover:rotate-0"
         />
         <img
           src="/assets/comingsoon/foto-dua.png"
@@ -30,7 +30,7 @@ const Main = () => {
           alt="foto"
           className="hidden md:absolute object-contain w-32 duration-500 ease-in-out right-[20%] top-32 -rotate-[20deg] hover:rotate-0 blur-[2px]"
         />
-        <div className="flex flex-col max-w-xs px-12 my-16 md:px-8 mx-auto font-sora">
+        <div className="flex flex-col max-w-xs px-12 translate-y-14 md:translate-y-0 md:px-8 mx-auto font-sora">
           <img
             src="/assets/comingsoon/mahkota.png"
             alt="mahkota"
