@@ -6,15 +6,6 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
-
-Route::get('/coming-soon', function () {
     return Inertia::render('Comingsoon');
 });
 Route::get('/photo-booth', function () {
@@ -23,13 +14,9 @@ Route::get('/photo-booth', function () {
 Route::get('/photo-result', function () {
     return Inertia::render('PhotoResult');
 });
-Route::get('/dev', function () {
-    return Inertia::render('dev/Dev');
-});
 Route::get('/{any}', function () {
     return Inertia::render('EmpatNolEmpat');
 });
-
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
