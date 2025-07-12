@@ -526,7 +526,7 @@ function PhotoResult(): React.ReactElement {
       <CustomPopup
         isOpen={showPopup}
         onClose={() => {
-          window.location.href = '/coming-soon';
+          window.location.href = '/';
         }}
         onConfirm={() => {
           window.location.href = '/photo-booth';
