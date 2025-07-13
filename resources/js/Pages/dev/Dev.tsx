@@ -5,7 +5,7 @@ const Dev = () => {
     <div className="container mx-auto min-h-screen bg-gray-50 p-10 space-y-4">
       <div className="mb-8 text-center">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">
-          Dev Playground
+          Dev Playground - php 8.2
         </h1>
         <p className="text-gray-500">
           Preview komponen dan style secara cepat.
