@@ -1,4 +1,3 @@
-import { Link } from '@inertiajs/react';
 import { LeftLink, RightLink } from '../configs/nav-links';
 import { Button } from './ui/button';
 
