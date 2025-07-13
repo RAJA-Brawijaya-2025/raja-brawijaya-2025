@@ -14,6 +14,14 @@ Route::get('/photo-booth', function () {
 Route::get('/photo-result', function () {
     return Inertia::render('PhotoResult');
 });
+Route::get('/ukm', function () {
+    return Inertia::render('home/Ukm');
+});
+Route::get('/ukm/{id}', function ($id) {
+    return Inertia::render('home/Ukm', ['id' => $id]);
+});
+
+
 Route::get('/{any}', function () {
     return Inertia::render('EmpatNolEmpat');
 });
