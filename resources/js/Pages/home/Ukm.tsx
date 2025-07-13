@@ -1,8 +1,11 @@
+import UkmContainer from '@/features/ukm/containers/ukm-container';
+import BaseLayout from '@/shared/Layouts/HomeLayout';
+
 const Ukm = () => {
   return (
-    <div>
-      <h1>Ukm</h1>
-    </div>
+    <BaseLayout>
+      <UkmContainer />
+    </BaseLayout>
   );
 };
 

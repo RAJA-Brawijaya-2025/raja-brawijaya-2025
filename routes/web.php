@@ -21,6 +21,9 @@ Route::get('/ukm/{id}', function ($id) {
     return Inertia::render('home/Ukm', ['id' => $id]);
 });
 
+Route::get('/dev', function () {
+    return Inertia::render('dev/Dev');
+});
 
 Route::get('/{any}', function () {
     return Inertia::render('EmpatNolEmpat');
