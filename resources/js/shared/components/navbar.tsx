@@ -4,10 +4,12 @@ import { useIsMobile } from '../lib/use-mobile';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { EllipsisVertical, X } from 'lucide-react';
+import { useIsTab } from '../lib/use-tab';
 
 const Navbar = () => {
   const currentPath = window.location.pathname;
   const isMobile = useIsMobile();
+  const isTab = useIsTab();
   const [open, setOpen] = useState(false);
 
   const isActive = (href: string) => {
@@ -28,7 +30,7 @@ const Navbar = () => {
     open: { y: 0, opacity: 1 },
   };
 
-  if (isMobile) {
+  if (isMobile || isTab) {
     return (
       <>
         <button
