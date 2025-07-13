@@ -14,8 +14,8 @@ Route::get('/photo-booth', function () {
 Route::get('/photo-result', function () {
     return Inertia::render('PhotoResult');
 });
-Route::get('/{any}', function () {
-    return Inertia::render('EmpatNolEmpat');
+Route::get('/dev', function () {
+    return Inertia::render('dev/Dev');
 });
 
 Route::get('/dashboard', function () {
@@ -28,4 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/{any}', function () {
+    return Inertia::render('EmpatNolEmpat');
+});
 require __DIR__ . '/auth.php';

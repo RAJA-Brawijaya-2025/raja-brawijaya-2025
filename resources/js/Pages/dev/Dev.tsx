@@ -27,18 +27,31 @@ const Dev = () => {
         <h2 className="text-xl font-semibold mb-4 text-gray-700">Color</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           <div className=" aspect-square bg-white border-1">white</div>
-          <div className=" aspect-square bg-primary-100 border-1">
-            primary 100
-          </div>
-          <div className=" aspect-square bg-primary-200 border-1">
-            primary 200
-          </div>
-          <div className=" aspect-square bg-primary-300 border-1">
-            primary 300
-          </div>
-          <div className=" aspect-square bg-primary-400 border-1">
-            primary 400
-          </div>
+          <div className=" aspect-square bg-gr-00 border-1">gr-00</div>
+          <div className=" aspect-square bg-gr-01 border-1">gr-01</div>
+          <div className=" aspect-square bg-gr-02 border-1">gr-02</div>
+          <div className=" aspect-square bg-gr-03 border-1">gr-03</div>
+          <div className=" aspect-square bg-gr-04 border-1">gr-04</div>
+          <div className=" aspect-square bg-gr-05 border-1">gr-05</div>
+          <div className=" aspect-square bg-gr-06 border-1">gr-06</div>
+          <div className=" aspect-square bg-gr-07 border-1">gr-07</div>
+
+          <div className=" aspect-square bg-yl-00 border-1">yl-00</div>
+          <div className=" aspect-square bg-yl-01 border-1">yl-01</div>
+          <div className=" aspect-square bg-yl-02 border-1">yl-02</div>
+          <div className=" aspect-square bg-yl-03 border-1">yl-03</div>
+          <div className=" aspect-square bg-yl-04 border-1">yl-04</div>
+          <div className=" aspect-square bg-yl-05 border-1">yl-05</div>
+
+          <div className=" aspect-square bg-or-00 border-1">or-00</div>
+          <div className=" aspect-square bg-or-01 border-1">or-01</div>
+
+          <div className=" aspect-square bg-pr-00 border-1">pr-00</div>
+          <div className=" aspect-square bg-pr-01 border-1">pr-01</div>
+          <div className=" aspect-square bg-pr-02 border-1">pr-02</div>
+
+          <div className=" aspect-square bg-active border-1">active</div>
+          <div className=" aspect-square bg-red border-1">red</div>
         </div>
       </div>
       <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-8">
