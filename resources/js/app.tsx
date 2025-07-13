@@ -13,6 +13,8 @@ const _appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 const queryClient = new QueryClient();
 
 createInertiaApp({
+  title: (title) =>
+    title ? `${title} - RAJA Brawijaya 2025` : 'RAJA Brawijaya 2025',
   resolve: (name) =>
     resolvePageComponent(
       `./Pages/${name}.tsx`,
