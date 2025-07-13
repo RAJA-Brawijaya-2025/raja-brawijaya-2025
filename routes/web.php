@@ -14,6 +14,7 @@ Route::get('/photo-booth', function () {
 Route::get('/photo-result', function () {
     return Inertia::render('PhotoResult');
 });
+
 Route::get('/ukm', function () {
     return Inertia::render('home/Ukm');
 });
@@ -23,10 +24,6 @@ Route::get('/ukm/{id}', function ($id) {
 
 Route::get('/dev', function () {
     return Inertia::render('dev/Dev');
-});
-
-Route::get('/{any}', function () {
-    return Inertia::render('EmpatNolEmpat');
 });
 
 Route::get('/dashboard', function () {
@@ -40,3 +37,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+
+Route::get('/{any}', function () {
+    return Inertia::render('EmpatNolEmpat');
+});
