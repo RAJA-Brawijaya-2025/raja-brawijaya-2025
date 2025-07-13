@@ -92,7 +92,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="max-w-7xl h-max fixed left-[50%] translate-x-[-50%] top-10 w-full py-4 mx-8 rounded-full bg-white/40 backdrop-blur-sm z-50 "
+      className="max-w-7xl h-max fixed left-[50%] translate-x-[-50%] top-10 w-full py-4 mx-auto rounded-full bg-white/40 backdrop-blur-sm z-50 "
       style={{
         boxShadow:
           '4px -4px 10px 0px rgba(255, 255, 255, 0.25) inset, -4px 4px 10px 0px rgba(255, 255, 255, 0.25) inset, 0px 0px 40px 0px rgba(0, 0, 0, 0.25) inset',
