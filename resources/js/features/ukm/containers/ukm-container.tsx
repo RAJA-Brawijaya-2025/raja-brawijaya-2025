@@ -1,5 +1,3 @@
-import React from 'react';
-
 const UkmContainer = () => {
   return (
     <section className="min-h-screen bg-primary-200 grid place-items-center">
