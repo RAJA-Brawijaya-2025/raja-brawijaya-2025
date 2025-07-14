@@ -3,7 +3,7 @@ import {
   motion,
   useMotionValue,
   animate,
-  PanInfo,
+  type PanInfo,
   useTransform,
 } from 'framer-motion';
 import { cardData } from '../data/card-data';

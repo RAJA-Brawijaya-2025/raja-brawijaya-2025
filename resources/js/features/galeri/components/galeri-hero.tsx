@@ -1,6 +1,6 @@
-import { motion, Variants } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { textData } from '../data/text-data';
-import { textDataType } from '../types/text-data-type';
+import type { textDataType } from '../types/text-data-type';
 
 const containerVariants: Variants = {
   hidden: {},
@@ -31,39 +31,47 @@ const GaleriHero: React.FC = () => {
     'bg-[radial-gradient(ellipse_150%_80%_at_60%_30%,rgba(255,255,255,0.5)_0%,transparent_30%)] bg-clip-text text-transparent mix-blend-overlay';
   const typedTextData: textDataType[] = textData;
 
+  const AnimatedText = ({ text }: { text: string }) => (
+    <>
+      {text.split('').map((char: string, charIndex: number) => (
+        <motion.span
+          key={charIndex}
+          variants={childVariants}
+          transition={{
+            type: 'spring',
+            damping: 15,
+            stiffness: 100,
+          }}
+          className="inline-block"
+        >
+          {char === ' ' ? '\u00A0' : char}
+        </motion.span>
+      ))}
+    </>
+  );
+
   return (
-    <div className="flex flex-col w-full mt-44 xl:mt-0 xl:justify-center  h-fit xl:items-start items-center z-20 xl:min-h-screen text-center ">
+    <div className="flex flex-col w-full mt-44 xl:mt-0 xl:justify-center h-fit xl:items-start items-center z-20 xl:min-h-screen text-center ">
       {typedTextData.map((line, index) => (
-        <div key={line.id} className={`relative ${line.className}`}>
-          {[bottomLayerStyles, `absolute inset-0 ${topLayerStyles}`].map(
-            (layerStyle, layerIndex) => (
-              <motion.h1
-                key={layerIndex}
-                className={`${baseFontStyles} ${layerStyle}`}
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-                custom={index}
-                aria-hidden={layerIndex === 1}
-              >
-                {line.text.split('').map((char: string, charIndex: number) => (
-                  <motion.span
-                    key={charIndex}
-                    variants={childVariants}
-                    transition={{
-                      type: 'spring',
-                      damping: 15,
-                      stiffness: 100,
-                    }}
-                    className="inline-block"
-                  >
-                    {char === ' ' ? '\u00A0' : char}
-                  </motion.span>
-                ))}
-              </motion.h1>
-            ),
-          )}
-        </div>
+        <motion.h1
+          key={line.id}
+          className={`relative ${line.className} ${baseFontStyles} ${bottomLayerStyles}`}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          custom={index}
+        >
+          {/* Accessible text content */}
+          <AnimatedText text={line.text} />
+
+          {/* Decorative layer, hidden from screen readers */}
+          <span
+            className={`absolute inset-0 ${topLayerStyles}`}
+            aria-hidden="true"
+          >
+            <AnimatedText text={line.text} />
+          </span>
+        </motion.h1>
       ))}
     </div>
   );
