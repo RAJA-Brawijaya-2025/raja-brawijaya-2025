@@ -40,7 +40,7 @@ const GaleriCard = () => {
   };
 
   return (
-    <div className="flex relative justify-center -ml-10 xl:-ml-0 w-full items-center ">
+    <div className="flex relative justify-center -ml-10   w-full items-center ">
       {cards.map((card, index) => {
         const isTopCard = index === cards.length - 1;
         const depth = cards.length - 1 - index;
@@ -53,7 +53,7 @@ const GaleriCard = () => {
         return (
           <motion.div
             key={card.id}
-            className="absolute aspect-square w-52 md:w-80 lg:w-96 2xl:w-[25rem]  z-30 rounded-2xl overflow-hidden cursor-grab"
+            className="absolute aspect-square w-52 md:w-80 xl:-ml-20 lg:w-96 2xl:w-[25rem]  z-30 rounded-2xl overflow-hidden cursor-grab"
             style={{
               x: isTopCard ? x : undefined,
               y: isTopCard ? y : undefined,
