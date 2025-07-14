@@ -14,12 +14,12 @@ const Footer = () => {
       <footer className="min-h-[400px] bg-gradient-to-t from-[#0C4C66] to-[#13B2BE] grid place-items-center px-4 py-6">
         <section className="container mx-auto flex flex-col items-center gap-12 w-full max-w-lg my-8">
           <div className="flex flex-col items-center gap-2 w-full">
-            <h2 className="text-yl-03 font-raillinc text-xl md:text-3xl text-center leading-tight">
+            <h2 className="text-yl-03 font-raillinc text-xl sm:text-3xl text-center leading-tight">
               Sekretariat
               <br />
               RAJA Brawijaya
             </h2>
-            <p className="text-white text-xs md:text-base text-center leading-tight">
+            <p className="text-white text-xs sm:text-sm md:text-base text-center leading-tight">
               Gedung EM-DPM UB Lantai 1, Jln.
               <br />
               Veteran 06C Malang 65145
