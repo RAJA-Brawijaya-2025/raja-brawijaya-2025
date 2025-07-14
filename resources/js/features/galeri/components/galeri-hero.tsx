@@ -61,10 +61,8 @@ const GaleriHero: React.FC = () => {
           animate="visible"
           custom={index}
         >
-          {/* Accessible text content */}
           <AnimatedText text={line.text} />
 
-          {/* Decorative layer, hidden from screen readers */}
           <span
             className={`absolute inset-0 ${topLayerStyles}`}
             aria-hidden="true"
