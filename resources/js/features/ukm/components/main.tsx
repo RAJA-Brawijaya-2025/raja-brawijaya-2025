@@ -12,22 +12,22 @@ const UkmMain = () => {
         <img
           src="/assets/fragments/ukm-background-4.svg"
           alt="orname"
-          className="absolute left-0 -top-24 -scale-x-100 w-1/4"
+          className="absolute left-0 -top-24 -scale-x-100 w-1/4 pointer-events-none select-none"
         />
         <img
           src="/assets/fragments/ukm-background-4.svg"
           alt="orname"
-          className="absolute right-0 -top-24 w-1/4"
+          className="absolute right-0 -top-24 w-1/4 pointer-events-none select-none"
         />
         <img
           src="/assets/fragments/ukm-background.svg"
           alt="orname"
-          className="absolute left-0 bottom-0 -scale-x-100 w-1/4"
+          className="absolute left-0 bottom-0 -scale-x-100 w-1/4 pointer-events-none select-none"
         />
         <img
           src="/assets/fragments/ukm-background.svg"
           alt="orname"
-          className="absolute right-0 bottom-0 w-1/4"
+          className="absolute right-0 bottom-0 w-1/4 pointer-events-none select-none"
         />
       </>
     );

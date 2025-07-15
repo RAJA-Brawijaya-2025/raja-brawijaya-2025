@@ -5,34 +5,34 @@ const UkmHero = () => {
         <img
           src="/assets/ukm/fragments/outer-hero.svg"
           alt="UKM Hero Outer Frame"
-          className="w-full"
+          className="w-full pointer-events-none select-none"
         />
         <img
           src="/assets/ukm/fragments/outer-hero.svg"
           alt="UKM Hero Outer Frame"
-          className="w-full"
+          className="w-full pointer-events-none select-none"
         />
         <img
           src="/assets/ukm/fragments/outer-hero.svg"
           alt="UKM Hero Outer Frame"
-          className="w-full"
+          className="w-full pointer-events-none select-none"
         />
       </div>
       <div className="absolute -bottom-22 z-20 flex">
         <img
           src="/assets/ukm/fragments/outer-hero.svg"
           alt="UKM Hero Outer Frame"
-          className="w-full"
+          className="w-full pointer-events-none select-none"
         />
         <img
           src="/assets/ukm/fragments/outer-hero.svg"
           alt="UKM Hero Outer Frame"
-          className="w-full"
+          className="w-full pointer-events-none select-none"
         />
         <img
           src="/assets/ukm/fragments/outer-hero.svg"
           alt="UKM Hero Outer Frame"
-          className="w-full"
+          className="w-full pointer-events-none select-none"
         />
       </div>
     </>
@@ -43,19 +43,19 @@ const UkmHero = () => {
       <img
         src="/assets/fragments/ukm-background.svg"
         alt="fragments"
-        className="absolute right-0 top-0 rotate-180 w-1/3 z-0"
+        className="absolute right-0 top-0 rotate-180 w-1/3 z-0 pointer-events-none select-none"
         style={{ transform: 'scaleX(-1)' }}
       />
       <div className="z-10 bg-gr-05 w-full h-1/2 relative">
         <img
           src="/assets/ukm/fragments/inner-hero.svg"
           alt="UKM Hero"
-          className="absolute h-full object-contain left-0"
+          className="absolute h-full object-contain left-0 pointer-events-none select-none"
         />
         <img
           src="/assets/ukm/fragments/inner-hero.svg"
           alt="UKM Hero"
-          className="absolute h-full object-contain right-0 rotate-180"
+          className="absolute h-full object-contain right-0 rotate-180 pointer-events-none select-none"
         />
         <OuterFrame />
         <div className="h-full space-y-4 grid place-content-center">

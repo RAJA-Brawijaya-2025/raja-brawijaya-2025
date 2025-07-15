@@ -7,7 +7,7 @@ export const UkmCard = () => {
         <img
           src="/assets/ukm/fragments/top-card.svg"
           alt="fragments"
-          className="max-w-24"
+          className="max-w-24 pointer-events-none"
         />
         <div className="relative flex justify-center items-center">
           <img
