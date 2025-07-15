@@ -182,10 +182,8 @@
     text-align: center;
     margin-top: 50px;
 
-    /* Base color */
     color: #fed700;
 
-    /* Outer stroke effect */
     text-shadow: 1px 1px 0 #917006, -1px 1px 0 #917006, 1px -1px 0 #917006,
         -1px -1px 0 #917006, 1.5px 1.5px 0 #917006, -1.5px 1.5px 0 #917006,
         1.5px -1.5px 0 #917006, -1.5px -1.5px 0 #917006;
