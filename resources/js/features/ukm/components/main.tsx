@@ -62,7 +62,7 @@ const UkmMain = () => {
                             ${
                               index === 1
                                 ? 'bg-gr-05 text-white shadow-[inset_-4px_4px_4px_rgba(255,255,255,0.25),0px_0px_4px_0px_#1D5D77]'
-                                : 'text-gr-05 shadow-[0px_0px_2px_0px_#1D5D77]'
+                                : 'text-gr-05 shadow-[0px_0px_2px_0px_#1D5D77] hover:bg-gray-100'
                             }`}
               >
                 <p className="font-bold text-base">{item.label}</p>
