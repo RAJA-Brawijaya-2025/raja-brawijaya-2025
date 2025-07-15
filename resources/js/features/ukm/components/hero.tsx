@@ -1,7 +1,7 @@
 const UkmHero = () => {
   const OuterFrame = () => (
     <>
-      <div className="absolute -top-24 z-20 flex rotate-180">
+      <div className="absolute -top-22 z-20 flex rotate-180">
         <img
           src="/assets/ukm/fragments/outer-hero.svg"
           alt="UKM Hero Outer Frame"
@@ -18,7 +18,7 @@ const UkmHero = () => {
           className="w-full"
         />
       </div>
-      <div className="absolute -bottom-24 z-20 flex">
+      <div className="absolute -bottom-22 z-20 flex">
         <img
           src="/assets/ukm/fragments/outer-hero.svg"
           alt="UKM Hero Outer Frame"
