@@ -1,5 +1,3 @@
-import { useIsMobile } from '@/shared/lib/use-mobile';
-
 const UkmHero = () => {
   const OuterFrame = () => (
     <>
