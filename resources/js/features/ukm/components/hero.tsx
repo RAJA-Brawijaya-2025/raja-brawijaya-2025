@@ -1,11 +1,13 @@
+import { useIsMobile } from '@/shared/lib/use-mobile';
+
 const UkmHero = () => {
   const OuterFrame = () => (
     <>
-      <div className="absolute -top-22 z-20 flex rotate-180">
+      <div className="absolute -top-[67px] md:-top-18 lg:-top-16 xl:-top-22 z-20 flex rotate-180">
         <img
           src="/assets/ukm/fragments/outer-hero.svg"
           alt="UKM Hero Outer Frame"
-          className="w-full pointer-events-none select-none"
+          className="w-full pointer-events-none select-none hidden md:block"
         />
         <img
           src="/assets/ukm/fragments/outer-hero.svg"
@@ -15,14 +17,14 @@ const UkmHero = () => {
         <img
           src="/assets/ukm/fragments/outer-hero.svg"
           alt="UKM Hero Outer Frame"
-          className="w-full pointer-events-none select-none"
+          className="w-full pointer-events-none select-none hidden lg:block"
         />
       </div>
-      <div className="absolute -bottom-22 z-20 flex">
+      <div className="absolute -bottom-[67px] md:-bottom-18 lg:-bottom-16 xl:-bottom-22 z-20 flex">
         <img
           src="/assets/ukm/fragments/outer-hero.svg"
           alt="UKM Hero Outer Frame"
-          className="w-full pointer-events-none select-none"
+          className="w-full pointer-events-none select-none hidden md:block"
         />
         <img
           src="/assets/ukm/fragments/outer-hero.svg"
@@ -32,7 +34,7 @@ const UkmHero = () => {
         <img
           src="/assets/ukm/fragments/outer-hero.svg"
           alt="UKM Hero Outer Frame"
-          className="w-full pointer-events-none select-none"
+          className="w-full pointer-events-none select-none hidden lg:block"
         />
       </div>
     </>
@@ -43,25 +45,25 @@ const UkmHero = () => {
       <img
         src="/assets/fragments/ukm-background.svg"
         alt="fragments"
-        className="absolute right-0 top-0 rotate-180 w-1/3 z-0 pointer-events-none select-none"
+        className="absolute right-0 top-0 rotate-180 w-2/3 md:w-3/5 lg:w-1/3 z-0 pointer-events-none select-none"
         style={{ transform: 'scaleX(-1)' }}
       />
       <div className="z-10 bg-gr-05 w-full h-1/2 relative">
         <img
           src="/assets/ukm/fragments/inner-hero.svg"
           alt="UKM Hero"
-          className="absolute h-full object-contain left-0 pointer-events-none select-none"
+          className="absolute h-3/4 md:h-full object-contain bottom-0 left-0 pointer-events-none select-none"
         />
         <img
           src="/assets/ukm/fragments/inner-hero.svg"
           alt="UKM Hero"
-          className="absolute h-full object-contain right-0 rotate-180 pointer-events-none select-none"
+          className="absolute h-3/4 md:h-full object-contain top-0 right-0 rotate-180 pointer-events-none select-none"
         />
         <OuterFrame />
         <div className="h-full space-y-4 grid place-content-center">
           <div className="relative">
             <h1
-              className="absolute w-full left-0 text-8xl font-raillinc bg-clip-text text-transparent"
+              className="absolute w-full left-0 text-6xl md:text-7xl xl:text-8xl  font-raillinc bg-clip-text text-transparent"
               style={{
                 WebkitTextStroke: '2px white',
                 color: 'transparent',
@@ -70,13 +72,13 @@ const UkmHero = () => {
             >
               UKM
             </h1>
-            <h1 className="relative text-8xl font-raillinc bg-gradient-yellow-02 text-transparent bg-clip-text">
+            <h1 className="relative text-6xl md:text-7xl xl:text-8xl  font-raillinc bg-gradient-yellow-02 text-transparent bg-clip-text">
               UKM
             </h1>
           </div>
           <div className="relative">
             <p
-              className="absolute w-full left-0 text-6xl font-raillinc bg-clip-text text-transparent"
+              className="absolute w-full left-0 text-4xl md:text-5xl xl:text-6xl font-raillinc bg-clip-text text-transparent"
               style={{
                 WebkitTextStroke: '2px white',
                 color: 'transparent',
@@ -85,7 +87,7 @@ const UkmHero = () => {
             >
               Unit Kegiatan Mahasiswa
             </p>
-            <p className="relative text-6xl font-raillinc bg-gradient-yellow-02 text-transparent bg-clip-text">
+            <p className="relative text-4xl md:text-5xl xl:text-6xl font-raillinc bg-gradient-yellow-02 text-transparent bg-clip-text">
               Unit Kegiatan Mahasiswa
             </p>
           </div>
