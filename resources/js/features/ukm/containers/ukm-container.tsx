@@ -1,8 +1,12 @@
+import UkmHero from '../components/hero';
+import UkmMain from '../components/main';
+
 const UkmContainer = () => {
   return (
-    <section className="min-h-screen bg-primary-200 grid place-items-center">
-      <h1>ukm</h1>
-    </section>
+    <main className="min-h-screen w-full mx-auto">
+      <UkmHero />
+      <UkmMain />
+    </main>
   );
 };
 
