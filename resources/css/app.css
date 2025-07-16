@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: "Raillinc";
-    src: url('../fonts/Raillinc.otf') format('opentype');
+    src: url("../fonts/Raillinc.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -176,4 +176,40 @@
         #83b3b6 24.15%,
         rgba(255, 255, 255, 0) 100%
     );
+}
+.bg-galeri {
+    background-image: url("../../public/assets/galeri/bg-batik.webp");
+    background-size: contain;
+    background-position: center;
+}
+.galeri-text-final {
+    font-size: 144px;
+    font-weight: normal;
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+
+    color: #fed700;
+
+    text-shadow: 1px 1px 0 #917006, -1px 1px 0 #917006, 1px -1px 0 #917006,
+        -1px -1px 0 #917006, 1.5px 1.5px 0 #917006, -1.5px 1.5px 0 #917006,
+        1.5px -1.5px 0 #917006, -1.5px -1.5px 0 #917006;
+}
+.galeri-text-final::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.5) 0%,
+        transparent 20%,
+        transparent 80%,
+        rgba(0, 0, 0, 0.25) 100%
+    );
+    border-radius: 8px;
+    pointer-events: none;
+    mix-blend-mode: overlay;
 }

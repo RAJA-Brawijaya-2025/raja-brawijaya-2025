@@ -22,6 +22,10 @@ Route::get('/ukm/{id}', function ($id) {
     return Inertia::render('home/Ukm', ['id' => $id]);
 });
 
+Route::get('/galeri', function () {
+    return Inertia::render('home/Galeri');
+});
+
 Route::get('/dev', function () {
     return Inertia::render('dev/Dev');
 });
