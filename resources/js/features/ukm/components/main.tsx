@@ -53,7 +53,7 @@ const UkmMain = () => {
               />
             </div>
           </div>
-          <div className="flex gap-5 mt-10 overflow-scroll">
+          <div className="flex gap-5 mt-10 overflow-auto">
             {Kategori.map((item, index) => (
               <Button
                 variant="tertiary"
