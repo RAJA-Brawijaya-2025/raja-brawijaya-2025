@@ -1,4 +1,4 @@
-import AdminContainer from '@/features/dashboard/containers/admin-container';
+import AdminContainer from '@/features/admin/containers/admin-container';
 
 const Admin = () => {
   return (
