@@ -1,5 +1,13 @@
+import React from 'react';
+import AdminLayout from '../layouts/admin-layout';
+
 const Perizinan = () => {
-  return <div>Perizinan Content</div>;
+  return (
+    <>
+      <AdminLayout title="Perizinan" />
+      <div>UKM Content</div>
+    </>
+  );
 };
 
 export default Perizinan;

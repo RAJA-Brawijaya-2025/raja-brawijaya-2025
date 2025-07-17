@@ -1,7 +1,13 @@
 import React from 'react';
+import AdminLayout from '../layouts/admin-layout';
 
 const Agenda = () => {
-  return <div>Agenda Content</div>;
+  return (
+    <>
+      <AdminLayout title="Agenda" />
+      <div>Agenda Content</div>
+    </>
+  );
 };
 
 export default Agenda;

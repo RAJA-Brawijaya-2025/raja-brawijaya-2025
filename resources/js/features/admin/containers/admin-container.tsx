@@ -1,5 +1,5 @@
-import Sidebar from '@/shared/components/sidebar';
 import ContentContainer from './content-container';
+import Sidebar from '@/shared/components/sidebar';
 
 import type { ContentContainerProps } from './content-container';
 

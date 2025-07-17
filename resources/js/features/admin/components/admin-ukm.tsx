@@ -1,7 +1,13 @@
 import React from 'react';
+import AdminLayout from '../layouts/admin-layout';
 
 const Ukm = () => {
-  return <div>UKM Content</div>;
+  return (
+    <>
+      <AdminLayout title="UKM" />
+      <div>UKM Content</div>
+    </>
+  );
 };
 
 export default Ukm;

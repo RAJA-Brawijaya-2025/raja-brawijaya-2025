@@ -1,5 +1,13 @@
+import React from 'react';
+import AdminLayout from '../layouts/admin-layout';
+
 const Berita = () => {
-  return <div>Berita Content</div>;
+  return (
+    <>
+      <AdminLayout title="Berita" />
+      <div>Berita Content</div>
+    </>
+  );
 };
 
 export default Berita;

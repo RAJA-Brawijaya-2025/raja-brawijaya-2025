@@ -1,12 +1,15 @@
-import { Link, usePage } from '@inertiajs/react';
+import { Head, Link, usePage } from '@inertiajs/react';
 
 import { sidebarMenus } from '../configs/sidebar-menus';
 
 const Sidebar = () => {
   const currentPath = usePage().url;
   const menus = sidebarMenus;
+  const title =
+    menus.find((menu) => currentPath.includes(menu.slug))?.name || 'Dashboard';
   return (
     <aside className="w-full max-w-80 text-gr-02 min-h-screen p-4">
+      <Head title={title} />
       <div className="flex flex-col text-center mx-auto font-sora mt-8 mb-12">
         <img
           src="/assets/comingsoon/mahkota.png"

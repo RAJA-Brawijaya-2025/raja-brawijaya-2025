@@ -1,7 +1,13 @@
 import React from 'react';
+import AdminLayout from '../layouts/admin-layout';
 
 const Penugasan = () => {
-  return <div>Penugasan Content</div>;
+  return (
+    <>
+      <AdminLayout title="Penugasa" />
+      <div>UKM Content</div>
+    </>
+  );
 };
 
 export default Penugasan;
