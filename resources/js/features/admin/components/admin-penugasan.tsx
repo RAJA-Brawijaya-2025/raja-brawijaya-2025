@@ -3,7 +3,7 @@ import AdminLayout from '../layouts/admin-layout';
 const Penugasan = () => {
   return (
     <>
-      <AdminLayout title="Penugasa" />
+      <AdminLayout title="Penugasan" />
       <div>UKM Content</div>
     </>
   );
