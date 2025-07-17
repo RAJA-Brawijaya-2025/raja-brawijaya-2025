@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import EntryAnimation from './entry-animation';
 
 const fakultasData = [
@@ -179,7 +179,8 @@ const Fakultas = () => {
               </p>
             </EntryAnimation>
             <div className="flex items-center justify-around w-full mb-[-27vw] cursor-pointer z-20">
-              <div
+              <button
+                type="button"
                 onClick={handlePrev}
                 className="w-10 h-10 cursor-pointer rounded-full bg-white flex items-center justify-center"
               >
@@ -188,13 +189,14 @@ const Fakultas = () => {
                   alt="sebelumnya"
                   className="w-4"
                 />
-              </div>
+              </button>
               <img
                 src={currentFaculty.img}
                 alt={currentFaculty.name}
                 className="w-40 h-40 rounded-full object-cover "
               />
-              <div
+              <button
+                type="button"
                 onClick={handleNext}
                 className="w-10 h-10 cursor-pointer rounded-full bg-white flex items-center justify-center"
               >
@@ -203,7 +205,7 @@ const Fakultas = () => {
                   alt="berikutnya"
                   className="w-4 scale-x-[-1]"
                 />
-              </div>
+              </button>
             </div>
           </div>
         )}
@@ -211,31 +213,33 @@ const Fakultas = () => {
         {!isMobile && (
           <>
             <div className="flex flex-row justify-center items-center gap-x-10 mb-[2vw] w-full px-[2vw] ">
-              <div
+              <button
+                type="button"
                 onClick={handlePrev}
-                className="w-8 h-8 cursor-pointer rounded-full bg-white flex flex-col items-center justify-center"
+                className="w-8 h-8 cursor-pointer rounded-full bg-white flex items-center justify-center"
               >
                 <img
                   src="/assets/landingpage/fakultas/arrow.webp"
                   alt="fakultas"
                   className="w-3 mr-0.5"
                 />
-              </div>
+              </button>
               <EntryAnimation type="fade" delay={1} duration={2}>
                 <p className="text-white text-[clamp(1.5vw,1.8vw,5rem)] sm:text-[clamp(1.5vw,1vw,5rem)] w-[70vw] h-[10vw] items-center flex flex-row text-justify">
                   {currentFaculty.description}
                 </p>
               </EntryAnimation>
-              <div
+              <button
+                type="button"
                 onClick={handleNext}
-                className="w-8 h-8 cursor-pointer rounded-full bg-white flex flex-col items-center justify-center"
+                className="w-8 h-8 cursor-pointer rounded-full bg-white flex items-center justify-center"
               >
                 <img
                   src="/assets/landingpage/fakultas/arrow.webp"
                   alt="fakultas"
                   className="w-3 ml-0.5 scale-x-[-1]"
                 />
-              </div>
+              </button>
             </div>
             <div className="relative w-full flex items-center justify-center ">
               {extendedFakultasData.map((fakultas, index) => {

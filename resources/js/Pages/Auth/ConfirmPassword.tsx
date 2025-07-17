@@ -1,22 +1,31 @@
+// resources/js/Pages/Auth/ConfirmPassword.tsx (VERSI PERBAIKAN)
+
+import { useId, type FC, type FormEventHandler, useEffect } from 'react';
+import GuestLayout from '@/shared/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
-import GuestLayout from '@/shared/Layouts/GuestLayout';
 import { Head, useForm } from '@inertiajs/react';
-import type { FormEventHandler } from 'react';
 
-export default function ConfirmPassword() {
+// Konvensi: Gunakan arrow function untuk komponen
+const ConfirmPassword: FC = () => {
+  // LANGKAH 1: Buat ID unik untuk input password
+  const passwordId = useId();
+
   const { data, setData, post, processing, errors, reset } = useForm({
     password: '',
   });
 
+  useEffect(() => {
+    return () => {
+      reset('password');
+    };
+  }, []);
+
   const submit: FormEventHandler = (e) => {
     e.preventDefault();
-
-    post(route('password.confirm'), {
-      onFinish: () => reset('password'),
-    });
+    post(route('password.confirm'));
   };
 
   return (
@@ -30,10 +39,11 @@ export default function ConfirmPassword() {
 
       <form onSubmit={submit}>
         <div className="mt-4">
-          <InputLabel htmlFor="password" value="Password" />
+          {/* LANGKAH 2: Terapkan ID unik ke label dan input */}
+          <InputLabel htmlFor={passwordId} value="Password" />
 
           <TextInput
-            id="password"
+            id={passwordId}
             type="password"
             name="password"
             value={data.password}
@@ -53,4 +63,6 @@ export default function ConfirmPassword() {
       </form>
     </GuestLayout>
   );
-}
+};
+
+export default ConfirmPassword;

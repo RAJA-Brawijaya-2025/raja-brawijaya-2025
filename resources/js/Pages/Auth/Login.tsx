@@ -1,3 +1,4 @@
+import { useId, type FC, type FormEventHandler } from 'react';
 import Checkbox from '@/Components/Checkbox';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
@@ -5,24 +6,28 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/shared/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
-import type { FormEventHandler } from 'react';
 
-export default function Login({
-  status,
-  canResetPassword,
-}: {
+// Konvensi: Definisikan tipe untuk props menggunakan 'type'.
+type LoginProps = {
   status?: string;
   canResetPassword: boolean;
-}) {
+};
+
+// Konvensi: Gunakan arrow function untuk deklarasi komponen.
+const Login: FC<LoginProps> = ({ status, canResetPassword }) => {
+  // Perbaikan Linter: Gunakan hook useId untuk membuat ID unik.
+  const emailId = useId();
+  const passwordId = useId();
+  const rememberId = useId();
+
   const { data, setData, post, processing, errors, reset } = useForm({
     email: '',
     password: '',
-    remember: false as boolean,
+    remember: false,
   });
 
   const submit: FormEventHandler = (e) => {
     e.preventDefault();
-
     post(route('login'), {
       onFinish: () => reset('password'),
     });
@@ -38,10 +43,11 @@ export default function Login({
 
       <form onSubmit={submit}>
         <div>
-          <InputLabel htmlFor="email" value="Email" />
+          {/* Terapkan ID unik untuk label dan input */}
+          <InputLabel htmlFor={emailId} value="Email" />
 
           <TextInput
-            id="email"
+            id={emailId}
             type="email"
             name="email"
             value={data.email}
@@ -55,10 +61,11 @@ export default function Login({
         </div>
 
         <div className="mt-4">
-          <InputLabel htmlFor="password" value="Password" />
+          {/* Terapkan ID unik untuk label dan input */}
+          <InputLabel htmlFor={passwordId} value="Password" />
 
           <TextInput
-            id="password"
+            id={passwordId}
             type="password"
             name="password"
             value={data.password}
@@ -71,13 +78,12 @@ export default function Login({
         </div>
 
         <div className="mt-4 block">
-          <label className="flex items-center" htmlFor="remember-me">
+          <label className="flex items-center" htmlFor={rememberId}>
             <Checkbox
+              id={rememberId} // Tambahkan ID agar terhubung dengan label
               name="remember"
               checked={data.remember}
-              onChange={(e) =>
-                setData('remember', (e.target.checked || false) as false)
-              }
+              onChange={(e) => setData('remember', e.target.checked as false)}
             />
             <span className="ms-2 text-sm text-gray-600">Remember me</span>
           </label>
@@ -100,4 +106,6 @@ export default function Login({
       </form>
     </GuestLayout>
   );
-}
+};
+
+export default Login;
