@@ -22,6 +22,16 @@ Route::get('/ukm/{id}', function ($id) {
     return Inertia::render('home/Ukm', ['id' => $id]);
 });
 
+//! this route is for cms dashboard, should be protected by auth middleware
+Route::get('/dashboard', function () {
+    return Inertia::render('cms/Dashboard');
+});
+Route::get('/dashboard/{slug?}', function ($slug = 'dashboard') {
+    return Inertia::render('cms/Dashboard', [
+        'slug' => $slug,
+    ]);
+})->where('slug', '.*');
+
 Route::get('/galeri', function () {
     return Inertia::render('home/Galeri');
 });
@@ -29,10 +39,6 @@ Route::get('/galeri', function () {
 Route::get('/dev', function () {
     return Inertia::render('dev/Dev');
 });
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
