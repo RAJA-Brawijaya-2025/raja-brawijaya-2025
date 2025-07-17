@@ -15,7 +15,7 @@ const AdminLayout = ({
   buttonAction,
 }: AdminLayoutProps) => {
   return (
-    <div className="w-full h-44 bg-gr-05 flex rounded-xl items-center justify-between px-8">
+    <div className="w-full h-44 bg-gr-05 flex rounded-xl items-center justify-between px-8 mb-8">
       <h1 className="text-4xl font-bold text-white">{title}</h1>
       {hasButton && buttonText && buttonAction && (
         <Button
