@@ -23,11 +23,11 @@ Route::get('/ukm/{id}', function ($id) {
 });
 
 //! this route is for cms dashboard, should be protected by auth middleware
-Route::get('/dashboard', function () {
-    return Inertia::render('cms/Dashboard');
+Route::get('/admin', function () {
+    return Inertia::render('cms/Admin');
 });
-Route::get('/dashboard/{slug?}', function ($slug = 'dashboard') {
-    return Inertia::render('cms/Dashboard', [
+Route::get('/admin/{slug?}', function ($slug = 'admin') {
+    return Inertia::render('cms/Admin', [
         'slug' => $slug,
     ]);
 })->where('slug', '.*');
