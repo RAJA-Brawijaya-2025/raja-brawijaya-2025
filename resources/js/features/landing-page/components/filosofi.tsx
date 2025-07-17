@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import CardColor from './card-color';
 import EntryAnimation from './entry-animation';
 
@@ -58,7 +58,7 @@ const Filosofi = () => {
                 background: activeColor.color,
                 boxShadow: 'inset 4px 4px 8px 0px #FFFFFF80',
               }}
-            ></div>
+            />
           </EntryAnimation>
         </div>
 
@@ -130,7 +130,7 @@ const Filosofi = () => {
               background: activeColor.color,
               boxShadow: 'inset 4px 4px 8px 0px #FFFFFF80',
             }}
-          ></div>
+          />
         </EntryAnimation>
       </div>
 

@@ -1,4 +1,3 @@
-import { Head } from '@inertiajs/react';
 import Hero from '../components/hero';
 import RajaBrawijaya from '../components/raja-brawijaya';
 import Filosofi from '../components/filosofi';

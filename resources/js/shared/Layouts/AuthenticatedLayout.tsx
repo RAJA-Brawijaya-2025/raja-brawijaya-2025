@@ -100,7 +100,7 @@ export default function Authenticated({
                   <title>Ikon svg</title>
                   <path
                     className={
-                      !showingNavigationDropdown ? 'inline-flex' : 'hidden'
+                      showingNavigationDropdown ? 'hidden' : 'inline-flex'
                     }
                     strokeLinecap="round"
                     strokeLinejoin="round"

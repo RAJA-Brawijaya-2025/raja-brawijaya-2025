@@ -1,4 +1,3 @@
-import React from 'react';
 import EntryAnimation from './entry-animation';
 
 const BukuPanduan = () => {
@@ -45,6 +44,7 @@ const BukuPanduan = () => {
                 }}
               >
                 <iframe
+                  title="Buku Panduan RAJA Brawijaya 2025"
                   style={{
                     borderRadius: '10px',
                     position: 'absolute',
@@ -60,7 +60,7 @@ const BukuPanduan = () => {
                   allowTransparency={true}
                   allowFullScreen={true}
                   allow="fullscreen"
-                ></iframe>
+                />
               </div>
               <img
                 src="/assets/landingpage/bukupanduan/ornaments.webp"

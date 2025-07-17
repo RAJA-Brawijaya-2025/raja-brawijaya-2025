@@ -101,7 +101,7 @@ const Rangkaian = () => {
   const cardsRef = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       gsap.set(cardsRef.current, { opacity: 0, scale: 0.8 });
 
       const tl = gsap.timeline({
