@@ -1,11 +1,8 @@
+import type { AdminProps } from '@/shared/types/admin';
 import AdminContainer from '@/features/admin/containers/admin-container';
 
-const Admin = () => {
-  return (
-    <AdminContainer>
-      <h1 className="text-2xl font-bold">Welcome to the Dashboard</h1>
-    </AdminContainer>
-  );
+const Admin = ({ slug }: AdminProps) => {
+  return <AdminContainer slug={slug} />;
 };
 
 export default Admin;

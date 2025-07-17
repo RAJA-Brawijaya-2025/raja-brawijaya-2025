@@ -1,11 +1,15 @@
-import type React from 'react';
 import Sidebar from '@/shared/components/sidebar';
+import ContentContainer from './content-container';
 
-const AdminContainer = ({ children }: { children: React.ReactNode }) => {
+import type { ContentContainerProps } from './content-container';
+
+const AdminContainer = ({ slug }: ContentContainerProps) => {
   return (
     <div className="flex">
       <Sidebar />
-      <main className="flex-1 p-10 bg-[#F1F4F9]">{children}</main>
+      <main className="flex-1 p-10 bg-[#F1F4F9]">
+        <ContentContainer slug={slug} />
+      </main>
     </div>
   );
 };
