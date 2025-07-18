@@ -1,6 +1,5 @@
-import { FC } from 'react';
-import { TBeritaItem } from '../data/dummy';
-import { Button } from '@/shared/components/ui/button';
+import type { FC } from 'react';
+import type { TBeritaItem } from '../data/dummy';
 
 interface IBeritaCard {
   berita: TBeritaItem;
@@ -36,7 +35,12 @@ const BeritaCard: FC<IBeritaCard> = ({ berita }) => {
         <p className="text-sm lg:text-sm z-20 sm:text-2xl xl:text-lg text-white xl:line-clamp-[10] line-clamp-6 md:line-clamp-none lg:line-clamp-6  ">
           {berita.description}
         </p>
-        <a className="bg-yl-03 p-8 py-2 z-20 rounded-xl text-white">More</a>
+        <a
+          href={`/berita/${berita.id}`}
+          className="bg-yl-03 p-8 py-2 z-20 rounded-xl text-white"
+        >
+          More
+        </a>
         <div className="absolute top-0 z-10 items-end flex flex-col justify-between h-full w-full">
           <img
             className="w-2/3 scale-y-[-1]"
