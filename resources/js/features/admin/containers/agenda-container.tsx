@@ -1,6 +1,6 @@
 import AdminLayout from '../layouts/admin-layout';
 
-const Agenda = () => {
+const AgendaContainer = () => {
   return (
     <>
       <AdminLayout
@@ -16,4 +16,4 @@ const Agenda = () => {
   );
 };
 
-export default Agenda;
+export default AgendaContainer;

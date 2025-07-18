@@ -1,6 +1,6 @@
 import AdminLayout from '../layouts/admin-layout';
 
-const Berita = () => {
+const BeritaContainer = () => {
   return (
     <>
       <AdminLayout
@@ -16,4 +16,4 @@ const Berita = () => {
   );
 };
 
-export default Berita;
+export default BeritaContainer;

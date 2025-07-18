@@ -1,6 +1,6 @@
 import AdminLayout from '../layouts/admin-layout';
 
-const Perizinan = () => {
+const PerizinanContainer = () => {
   return (
     <>
       <AdminLayout title="Perizinan" />
@@ -9,4 +9,4 @@ const Perizinan = () => {
   );
 };
 
-export default Perizinan;
+export default PerizinanContainer;

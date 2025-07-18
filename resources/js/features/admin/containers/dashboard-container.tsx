@@ -1,7 +1,7 @@
 import AdminLayout from '../layouts/admin-layout';
-import { DashboardChart } from './admin-chart';
+import { DashboardChart } from '../components/admin-chart';
 
-const Dashboard = () => {
+const DashboardContainer = () => {
   return (
     <>
       <AdminLayout title="Dashboard" />
@@ -10,4 +10,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardContainer;

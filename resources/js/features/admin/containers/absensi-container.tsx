@@ -1,19 +1,19 @@
 import AdminLayout from '../layouts/admin-layout';
 
-const Ukm = () => {
+const AbsensiContainer = () => {
   return (
     <>
       <AdminLayout
-        title="UKM"
+        title="Absensi"
         hasButton
-        buttonText="Tambah UKM"
+        buttonText="Buat Presensi"
         buttonAction={() => {
           alert('Button Clicked');
         }}
       />
-      <div>UKM Content</div>
+      <div>Absensi Content</div>
     </>
   );
 };
 
-export default Ukm;
+export default AbsensiContainer;

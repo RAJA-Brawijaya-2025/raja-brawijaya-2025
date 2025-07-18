@@ -1,6 +1,6 @@
 import AdminLayout from '../layouts/admin-layout';
 
-const MahasiswaBaru = () => {
+const MahasiswaBaruContainer = () => {
   return (
     <>
       <AdminLayout title="Mahasiswa Baru" />
@@ -9,4 +9,4 @@ const MahasiswaBaru = () => {
   );
 };
 
-export default MahasiswaBaru;
+export default MahasiswaBaruContainer;

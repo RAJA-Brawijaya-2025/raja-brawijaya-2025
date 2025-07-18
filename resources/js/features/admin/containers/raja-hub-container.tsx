@@ -1,6 +1,6 @@
 import AdminLayout from '../layouts/admin-layout';
 
-const RajaHub = () => {
+const RajaHubContainer = () => {
   return (
     <>
       <AdminLayout title="RAJA Hub" />
@@ -9,4 +9,4 @@ const RajaHub = () => {
   );
 };
 
-export default RajaHub;
+export default RajaHubContainer;

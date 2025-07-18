@@ -1,6 +1,6 @@
 import AdminLayout from '../layouts/admin-layout';
 
-const Penugasan = () => {
+const PenugasanContainer = () => {
   return (
     <>
       <AdminLayout
@@ -14,4 +14,4 @@ const Penugasan = () => {
   );
 };
 
-export default Penugasan;
+export default PenugasanContainer;
