@@ -1,4 +1,4 @@
-import { TBeritaItem } from '../../data/dummy';
+import type { TBeritaItem } from '../../data/dummy';
 import BeritaDetailContent from '../components/berita-detail-content';
 import BeritaLainList from '../components/berita-lain-list';
 

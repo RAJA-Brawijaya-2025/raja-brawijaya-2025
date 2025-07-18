@@ -1,5 +1,5 @@
-import React from 'react';
-import { TBeritaItem } from '../../data/dummy';
+import type React from 'react';
+import type { TBeritaItem } from '../../data/dummy';
 
 interface BeritaDetailContentProps {
   Berita: TBeritaItem;
