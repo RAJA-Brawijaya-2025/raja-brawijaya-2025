@@ -8,6 +8,7 @@
     "hot": "mix watch --hot",
     "format": "biome format resources/js --write",
     "lint": "biome lint resources/js",
+    "lint:fix": "biome lint resources/js --write",
     "prepare": "husky install"
   },
   "lint-staged": {
