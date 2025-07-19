@@ -1,4 +1,4 @@
-import { TBeritaItem } from '../../types/berita-types';
+import type { TBeritaItem } from '../../types/berita-types';
 
 const BeritaDetailContent: React.FC<{ Berita: TBeritaItem }> = ({ Berita }) => {
   return (

@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { TBeritaItem } from '../types/berita-types';
+import type { TBeritaItem } from '../types/berita-types';
 
 const BeritaCard: FC<{ berita: TBeritaItem }> = ({ berita }) => {
   return (

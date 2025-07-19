@@ -1,4 +1,4 @@
-import { TBeritaItem } from '../types/berita-types';
+import type { TBeritaItem } from '../types/berita-types';
 
 const placeholderImage = ' /assets/berita/card-image-berita.webp';
 

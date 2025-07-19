@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { BeritaPaginationProps } from '../types/berita-types';
+import type { BeritaPaginationProps } from '../types/berita-types';
 
 export const BeritaPagination = ({
   current = 1,

@@ -1,4 +1,4 @@
-import { TBeritaItem } from '../../types/berita-types';
+import type { TBeritaItem } from '../../types/berita-types';
 
 const BeritaLainCard: React.FC<{ berita: TBeritaItem }> = ({ berita }) => {
   return (
