@@ -1,6 +1,6 @@
 import RabrawHead from '../components/rabraw-head';
-import Ornaments from '../components/ornaments';
-import Awan from '../components/awan';
+import Ornaments from '../components/Ornaments';
+import Awan from '../components/Awan';
 import PhotoResult from '../components/photo-result';
 
 const PhotoResultContainer = () => {
