@@ -6,11 +6,11 @@ const DashboardContainer = () => {
   return (
     <>
       <AdminLayout title="Dashboard" />
-      <div className="flex gap-4">
-        <div className="w-3/4">
+      <div className="flex gap-4 flex-col md:flex-row">
+        <div className="w-full md:w-3/4">
           <DashboardChart />
         </div>
-        <div className="w-1/4">
+        <div className="w-full md:w-1/4">
           <DashboardDesc />
         </div>
       </div>

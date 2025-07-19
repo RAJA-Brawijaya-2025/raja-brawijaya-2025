@@ -8,7 +8,7 @@ import {
 
 const DashboardDesc = () => {
   return (
-    <Card>
+    <Card className="h-full">
       <CardHeader>
         <CardTitle className="text-2xl text-gr-05">Data Harian</CardTitle>
         <CardDescription className="text-black text-sm">
