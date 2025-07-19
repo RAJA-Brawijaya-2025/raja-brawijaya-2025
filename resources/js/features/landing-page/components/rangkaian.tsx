@@ -108,8 +108,8 @@ const Rangkaian = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           scrub: 1,
-          start: 'center center',
-          end: 'bottom bottom',
+          start: 'top top',
+          end: 'center center',
         },
       });
 
