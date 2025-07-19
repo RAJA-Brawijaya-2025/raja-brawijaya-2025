@@ -5,7 +5,7 @@ import {
   TransitionChild,
 } from '@headlessui/react';
 
-import { useId } from 'react';
+import { useId, type FC, type PropsWithChildren } from 'react';
 import type { FC, PropsWithChildren } from 'react';
 
 // Konvensi: Gunakan 'type' untuk mendefinisikan props komponen.

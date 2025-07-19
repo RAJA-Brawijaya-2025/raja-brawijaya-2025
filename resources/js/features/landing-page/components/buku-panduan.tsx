@@ -113,27 +113,31 @@ const BukuPanduan = () => {
       </div>
 
       <div className=" z-10 sm:hidden absolute w-[60vw] right-0 top-[-18%]  ">
-        <img
-          src="/assets/landingpage/bukupanduan/wayang.webp"
-          alt="buku-panduan"
-          className="w-full sm:w-[50vw] "
-        />
-        <img
-          src="/assets/landingpage/bukupanduan/awan-ungu.webp"
-          alt="buku-panduan"
-          className="absolute w-[25vw] bottom-[-10%] right-[0%] animate-float"
-        />
-        <img
-          src="/assets/landingpage/bukupanduan/awan-kecil.webp"
-          alt="buku-panduan"
-          className="absolute w-[12vw] bottom-[0%] left-[30%] animate-float"
-        />
-        <img
-          src="/assets/landingpage/bukupanduan/awan-kecil.webp"
-          alt="buku-panduan"
-          className="absolute w-[12vw] bottom-[30%] -z-10 scale-x-[-1] right-[0%] animate-float"
-        />
+        <EntryAnimation type="slide" direction="right" delay={0.5} duration={1}>
+          <img
+            src="/assets/landingpage/bukupanduan/wayang.webp"
+            alt="buku-panduan"
+            className="w-full sm:w-[50vw] "
+          />
+
+          <img
+            src="/assets/landingpage/bukupanduan/awan-ungu.webp"
+            alt="buku-panduan"
+            className="absolute w-[25vw] bottom-[-10%] right-[0%] animate-float"
+          />
+          <img
+            src="/assets/landingpage/bukupanduan/awan-kecil.webp"
+            alt="buku-panduan"
+            className="absolute w-[12vw] bottom-[0%] left-[30%] animate-float"
+          />
+          <img
+            src="/assets/landingpage/bukupanduan/awan-kecil.webp"
+            alt="buku-panduan"
+            className="absolute w-[12vw] bottom-[30%] -z-10 scale-x-[-1] right-[0%] animate-float"
+          />
+        </EntryAnimation>
       </div>
+      
       <EntryAnimation
         type="fade"
         delay={0.5}
