@@ -1,11 +1,5 @@
-import React, {
-  useRef,
-  useState,
-  useEffect,
-  ReactNode,
-  MouseEventHandler,
-  UIEvent,
-} from 'react';
+import type { ReactNode, MouseEventHandler, UIEvent } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 interface AnimatedItemProps {
@@ -164,7 +158,8 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
               }
             }}
           >
-            <div
+            <button
+              type="button"
               className={`p-4 bg-[#C99C0B] w-full sm:w-[80vw] md:w-[60vw] relative z-20 mx-auto flex flex-row justify-between gap-x-2 items-center border-4 border-white drop-shadow-md rounded-3xl ${selectedIndex === index ? 'bg-[#222]' : ''} ${itemClassName}`}
               onClick={() => handleToggle(index)}
             >
@@ -183,7 +178,7 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
                 alt="toggle"
                 className={`w-[3vw] transition-transform duration-300 ${openStates[index] ? 'rotate-180' : ''}`}
               />
-            </div>
+            </button>
             <div
               className="grid transition-[grid-template-rows] duration-500 mt-[-5vw] md:mt-[-2vw] mb-[6vw] md:mb-[3vw] drop-shadow-md ease-in-out sm:w-[80vw] md:w-[60vw] mx-auto -mt-2"
               style={{ gridTemplateRows: openStates[index] ? '1fr' : '0fr' }}
