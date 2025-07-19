@@ -26,6 +26,15 @@ Route::get('/galeri', function () {
     return Inertia::render('home/Galeri');
 });
 
+Route::get('/berita', function () {
+    return Inertia::render('home/Berita/Berita');
+});
+Route::get('/berita/{id}', function ($id) {
+    return Inertia::render('home/Berita/BeritaDetail/BeritaDetail', [
+        'id' => $id
+    ]);
+});
+
 Route::get('/raja-hub', function(){
     return Inertia::render('home/Rajahub');
 });
