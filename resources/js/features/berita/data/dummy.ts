@@ -1,11 +1,4 @@
-export type TBeritaItem = {
-  id: string;
-  title: string;
-  date: string;
-  description: string;
-  image: string;
-  slug: string;
-};
+import { TBeritaItem } from '../types/berita-types';
 
 const placeholderImage = ' /assets/berita/card-image-berita.webp';
 

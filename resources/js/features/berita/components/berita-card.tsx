@@ -1,18 +1,14 @@
 import type { FC } from 'react';
-import type { TBeritaItem } from '../data/dummy';
+import { TBeritaItem } from '../types/berita-types';
 
-interface IBeritaCard {
-  berita: TBeritaItem;
-}
-
-const BeritaCard: FC<IBeritaCard> = ({ berita }) => {
+const BeritaCard: FC<{ berita: TBeritaItem }> = ({ berita }) => {
   return (
     <div className="w-full z-20 hover:scale-105 transition-all duration-300 flex aspect-video font-sora   h-full overflow-hidden border-6 bg-gr-07 border-white rounded-3xl shadow-2xl">
       <div className=" px-3 py-4 w-4/7 flex flex-col justify-between relative">
         <div className="flex flex-col z-20  h-full justify-between ">
           <img
             className=" w-3/4"
-            src="/assets/berita/sticker-berita.svg"
+            src="/assets/berita/fragments/sticker-berita.svg"
             alt=""
           />
           <div>
@@ -32,24 +28,24 @@ const BeritaCard: FC<IBeritaCard> = ({ berita }) => {
         </div>
       </div>
       <div className="w-3/7 relative p-4 flex flex-col justify-between items-center  lg:p-9 gap-y-4">
-        <p className="text-sm lg:text-sm z-20 sm:text-2xl xl:text-lg text-white xl:line-clamp-[10] line-clamp-6 md:line-clamp-none lg:line-clamp-6  ">
+        <p className="text-sm lg:text-sm z-20 sm:text-xl xl:text-lg text-white xl:line-clamp-[10] line-clamp-6 md:line-clamp-none lg:line-clamp-6  ">
           {berita.description}
         </p>
         <a
           href={`/berita/${berita.id}`}
-          className="bg-yl-03 p-8 py-2 z-20 rounded-xl text-white"
+          className="bg-yl-03 text-xs md:text-base p-8 py-2 z-20 rounded-xl text-white"
         >
           More
         </a>
         <div className="absolute top-0 z-10 items-end flex flex-col justify-between h-full w-full">
           <img
             className="w-2/3 scale-y-[-1]"
-            src="/assets/berita/card-bg-berita.webp"
+            src="/assets/berita/background/card-bg-berita.webp"
             alt=""
           />{' '}
           <img
             className="w-2/3"
-            src="/assets/berita/card-bg-berita.webp"
+            src="/assets/berita/background/card-bg-berita.webp"
             alt=""
           />
         </div>

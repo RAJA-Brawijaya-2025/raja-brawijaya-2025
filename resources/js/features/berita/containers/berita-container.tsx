@@ -1,11 +1,11 @@
 import Hero from '../components/berita-hero';
-import BeritaCardSection from '../components/berita-card-section';
+import BeritaSection from '../components/berita-section';
 
 const BeritaContainer = () => {
   return (
     <section className="min-h-screen relative">
       <Hero />
-      <BeritaCardSection />
+      <BeritaSection />
     </section>
   );
 };

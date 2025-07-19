@@ -1,10 +1,5 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-interface BeritaPaginationProps {
-  current?: number;
-  total?: number;
-  onChange?: (page: number) => void;
-}
+import { BeritaPaginationProps } from '../types/berita-types';
 
 export const BeritaPagination = ({
   current = 1,

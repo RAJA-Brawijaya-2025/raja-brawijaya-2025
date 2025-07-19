@@ -29,7 +29,7 @@ Route::get('/berita', function () {
     return Inertia::render('home/Berita/Berita');
 });
 Route::get('/berita/{id}', function ($id) {
-    return Inertia::render('home/Berita/BeritaDetail', [
+    return Inertia::render('home/Berita/BeritaDetail/BeritaDetail', [
         'id' => $id
     ]);
 });

@@ -1,35 +1,24 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { daftarBerita } from '../../data/dummy';
 import { ChevronRight } from 'lucide-react';
 import BeritaLainCard from './berita-lain-card';
+import { usePagination } from '@/shared/hooks/use-pagination';
 
 const BeritaLainList = () => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 3;
-
-  const totalPages = Math.ceil(daftarBerita.length / itemsPerPage);
-
-  const startIndex = currentPage * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const beritaToDisplay = daftarBerita.slice(startIndex, endIndex);
-
-  const handleNext = () => {
-    const nextPage = (currentPage + 1) % totalPages;
-    setCurrentPage(nextPage);
-  };
+  const { paginatedData, nextPage } = usePagination(daftarBerita, 3);
 
   return (
     <div className="relative  container mx-auto p-4  flex flex-col-reverse lg:flex-col h-fullw items-end w-full ">
       <div className="flex items-center gap-6 ">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {beritaToDisplay.map((berita) => (
+          {paginatedData.map((berita) => (
             <a href={`/berita/${berita.id}`} key={berita.id}>
               <BeritaLainCard berita={berita} />
             </a>
           ))}
         </div>
         <button
-          onClick={handleNext}
+          onClick={nextPage}
           className="hidden lg:block rounded-full border bg-white p-2 text-gray-700 shadow-md transition hover:bg-gray-100"
           aria-label="Next"
         >

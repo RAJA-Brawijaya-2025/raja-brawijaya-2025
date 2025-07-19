@@ -213,10 +213,3 @@
     pointer-events: none;
     mix-blend-mode: overlay;
 }
-
-.batik-head-atas {
-    background-image: url("../../public/assets/berita/batik-head-berita.webp");
-    background-repeat: repeat-x;
-    background-size: contain;
-    background-position: center;
-}

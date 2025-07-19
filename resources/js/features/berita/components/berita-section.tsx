@@ -2,7 +2,7 @@ import { daftarBerita } from '../data/dummy';
 import BeritaCard from './berita-card';
 import { BeritaPagination } from './berita-pagination';
 
-const BeritaCardSection = () => {
+const BeritaSection = () => {
   return (
     <div className="min-h-screen relative -mt-40 mb-20  bg-white">
       <div className="container  mx-auto">
@@ -25,4 +25,4 @@ const BeritaCardSection = () => {
   );
 };
 
-export default BeritaCardSection;
+export default BeritaSection;

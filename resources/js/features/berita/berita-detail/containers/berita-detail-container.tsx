@@ -1,4 +1,4 @@
-import type { TBeritaItem } from '../../data/dummy';
+import { TBeritaItem } from '../../types/berita-types';
 import BeritaDetailContent from '../components/berita-detail-content';
 import BeritaLainList from '../components/berita-lain-list';
 
@@ -11,7 +11,7 @@ const BeritaDetailContainer = ({ berita }: { berita: TBeritaItem }) => {
         <div className="absolute hidden lg:block -top-96 z-10 left-0">
           <img
             className="w-2/3"
-            src="/assets/berita/bg-batik-berita.webp"
+            src="/assets/berita/background/bg-batik-berita.webp"
             alt=""
           />
         </div>

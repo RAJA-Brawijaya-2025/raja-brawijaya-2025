@@ -1,13 +1,6 @@
-import type React from 'react';
-import type { TBeritaItem } from '../../data/dummy';
+import { TBeritaItem } from '../../types/berita-types';
 
-interface BeritaDetailContentProps {
-  Berita: TBeritaItem;
-}
-
-const BeritaDetailContent: React.FC<BeritaDetailContentProps> = ({
-  Berita,
-}) => {
+const BeritaDetailContent: React.FC<{ Berita: TBeritaItem }> = ({ Berita }) => {
   return (
     <div className="w-full container mx-auto p-4">
       <div className="w-full min-h-[1500px] relative rounded-4xl lg:rounded-[60px] bg-white shadow-[0px_0px_20px_0px] shadow-black/50">
@@ -18,22 +11,22 @@ const BeritaDetailContent: React.FC<BeritaDetailContentProps> = ({
         <div className="w-full h-full top-0 absolute">
           <img
             className="w-2/8 lg:w-1/8 absolute left-4 top-4"
-            src="/assets/berita/ornament-card-berita-detail.webp"
+            src="/assets/berita/fragments/ornament-card-berita-detail.webp"
             alt=""
           />
           <img
             className="w-2/8 lg:w-1/8 absolute right-4 top-4 scale-x-[-1]"
-            src="/assets/berita/ornament-card-berita-detail.webp"
+            src="/assets/berita/fragments/ornament-card-berita-detail.webp"
             alt=""
           />{' '}
           <img
             className="w-2/8 lg:w-1/8 absolute left-4 bottom-4 scale-y-[-1] "
-            src="/assets/berita/ornament-card-berita-detail.webp"
+            src="/assets/berita/fragments/ornament-card-berita-detail.webp"
             alt=""
           />
           <img
             className="w-2/8 lg:w-1/8 absolute right-4 bottom-4 scale-x-[-1] scale-y-[-1]"
-            src="/assets/berita/ornament-card-berita-detail.webp"
+            src="/assets/berita/fragments/ornament-card-berita-detail.webp"
             alt=""
           />
         </div>
