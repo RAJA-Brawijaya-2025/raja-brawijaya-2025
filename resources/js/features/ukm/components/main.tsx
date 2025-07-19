@@ -36,24 +36,24 @@ const UkmMain = () => {
   return (
     <section className="min-h-screen h-max pb-28 relative w-full">
       <BgOrnamen />
-      <main className="container mx-auto h-max">
+      <main className="container mx-auto h-max px-4">
         <div>
-          <div className="flex justify-between items-center">
-            <h2 className="text-gr-05 font-extrabold text-5xl font-sora">
+          <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
+            <h2 className="text-gr-05 font-extrabold text-4xl md:text-5xl font-sora">
               Kategori
             </h2>
-            <div className="relative flex items-center">
+            <div className="relative flex items-center w-full md:w-max">
               <Search
                 className="absolute left-1 top-0 mt-2 ml-2 text-muted-foreground"
                 size={20}
               />
               <Input
                 placeholder="Cari di sini ygy..."
-                className="w-max pl-10 border-2 border-gr-05"
+                className="w-full md:w-max pl-10 border-2 border-gr-05"
               />
             </div>
           </div>
-          <div className="flex gap-5 mt-10">
+          <div className="flex gap-5 mt-10 overflow-auto">
             {Kategori.map((item, index) => (
               <Button
                 variant="tertiary"
@@ -70,7 +70,7 @@ const UkmMain = () => {
             ))}
           </div>
         </div>
-        <div className="mt-20 grid grid-cols-3 gap-8">
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Array.from({ length: 9 }).map((_, idx) => (
             <UkmCard key={idx} />
           ))}

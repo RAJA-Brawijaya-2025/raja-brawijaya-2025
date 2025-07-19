@@ -4,22 +4,31 @@ import {
   Transition,
   TransitionChild,
 } from '@headlessui/react';
-import type { PropsWithChildren } from 'react';
 
-export default function Modal({
+import { useId, type FC, type PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+
+// Konvensi: Gunakan 'type' untuk mendefinisikan props komponen.
+// Tipe '() => void' lebih spesifik dan aman daripada 'CallableFunction'.
+type ModalProps = PropsWithChildren<{
+  show: boolean;
+  maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  closeable?: boolean;
+  onClose?: () => void;
+}>;
+
+// Konvensi: Gunakan arrow function untuk deklarasi komponen.
+const Modal: FC<ModalProps> = ({
   children,
   show = false,
   maxWidth = '2xl',
   closeable = true,
   onClose = () => {
-    /* akalin ae wak */
+    /* no-op */
   },
-}: PropsWithChildren<{
-  show: boolean;
-  maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-  closeable?: boolean;
-  onClose: CallableFunction;
-}>) {
+}) => {
+  const modalId = useId();
+
   const close = () => {
     if (closeable) {
       onClose();
@@ -33,11 +42,12 @@ export default function Modal({
     xl: 'sm:max-w-xl',
     '2xl': 'sm:max-w-2xl',
   }[maxWidth];
+
   return (
     <Transition show={show} leave="duration-200">
       <Dialog
         as="div"
-        id="modal"
+        id={modalId}
         className="fixed inset-0 z-50 flex transform items-center overflow-y-auto px-4 py-6 transition-all sm:px-0"
         onClose={close}
       >
@@ -69,4 +79,6 @@ export default function Modal({
       </Dialog>
     </Transition>
   );
-}
+};
+
+export default Modal;
