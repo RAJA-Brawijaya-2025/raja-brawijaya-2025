@@ -34,8 +34,6 @@ Route::get('/dev', function () {
     return Inertia::render('dev/Dev');
 });
 
-
-
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

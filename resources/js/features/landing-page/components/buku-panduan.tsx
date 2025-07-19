@@ -137,6 +137,7 @@ const BukuPanduan = () => {
           />
         </EntryAnimation>
       </div>
+      
       <EntryAnimation
         type="fade"
         delay={0.5}
