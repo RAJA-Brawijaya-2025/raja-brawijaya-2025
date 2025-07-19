@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Landingpage');
+    return Inertia::render('home/Landingpage');
 });
 Route::get('/photo-booth', function () {
     return Inertia::render('PhotoBooth');
@@ -24,6 +24,10 @@ Route::get('/ukm/{id}', function ($id) {
 
 Route::get('/galeri', function () {
     return Inertia::render('home/Galeri');
+});
+
+Route::get('/raja-hub', function(){
+    return Inertia::render('home/Rajahub');
 });
 
 Route::get('/dev', function () {
