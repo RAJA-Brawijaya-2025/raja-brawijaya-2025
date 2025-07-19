@@ -194,6 +194,15 @@
   -webkit-mask: radial-gradient(52% var(--c) at top, #0000 calc(100% - 1px), #000);
 }
 
+.curved-edge3 {
+  --c: 85px;
+  height: 22.5%;
+  width: 100%;
+  mask: radial-gradient(52% var(--c) at top, #0000 calc(100% - 1px), #000);
+  background: white;
+  -webkit-mask: radial-gradient(52% var(--c) at top, #0000 calc(100% - 1px), #000);
+}
+
 @media (max-width: 768px) {
   .curved-edge2 {
     --c: 80px;
@@ -258,8 +267,23 @@
   }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite alternate;
+@keyframes awan {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-5%)  rotate(1deg);
+  }
+
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+}
+
+.animate-awan {
+  animation: awan 6s ease-in-out infinite alternate;
+  animation-delay: 3s;
 }
 
 @keyframes sway {
@@ -296,7 +320,6 @@
   }
 }
 
-/* Animasi dari Kiri */
 @keyframes slide-from-left {
   0% {
     transform: translateX(-50px);
