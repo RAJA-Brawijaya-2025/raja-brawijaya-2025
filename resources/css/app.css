@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sora:wght@100..800&display=swap");
 
 @font-face {
+
   font-family: "Raillinc";
   src: url('../fonts/Raillinc.otf') format('opentype');
   font-weight: normal;
@@ -162,13 +163,18 @@
   }
 }
 
+@layer utilities {
+    .bg-gradient-yellow-02 {
+        background-image: var(--gradient-yellow-02);
+    }
+}
+
 .photo-booth-bg {
   background: linear-gradient(0deg,
       #1d5d77 0%,
       #83b3b6 24.15%,
       rgba(255, 255, 255, 0) 100%);
 }
-
 
 .curved-edge {
   --c: 85px;
@@ -274,9 +280,6 @@
   transform-origin: left; 
 }
 
-
-
-
 @keyframes slide-from-bottom {
   0% {
     transform: translateY(50vw);
@@ -339,4 +342,41 @@
 .animate-spin-inverted {
   animation: spin 15s linear infinite reverse;
   animation-delay: 2.1s;
+}
+
+.bg-galeri {
+    background-image: url("../../public/assets/galeri/bg-batik.webp");
+    background-size: contain;
+    background-position: center;
+}
+.galeri-text-final {
+    font-size: 144px;
+    font-weight: normal;
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+
+    color: #fed700;
+
+    text-shadow: 1px 1px 0 #917006, -1px 1px 0 #917006, 1px -1px 0 #917006,
+        -1px -1px 0 #917006, 1.5px 1.5px 0 #917006, -1.5px 1.5px 0 #917006,
+        1.5px -1.5px 0 #917006, -1.5px -1.5px 0 #917006;
+}
+.galeri-text-final::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.5) 0%,
+        transparent 20%,
+        transparent 80%,
+        rgba(0, 0, 0, 0.25) 100%
+    );
+    border-radius: 8px;
+    pointer-events: none;
+    mix-blend-mode: overlay;
 }

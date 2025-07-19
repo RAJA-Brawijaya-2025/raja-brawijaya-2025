@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Landingpage');
+    return Inertia::render('Comingsoon');
 });
 Route::get('/photo-booth', function () {
     return Inertia::render('PhotoBooth');
@@ -14,23 +14,9 @@ Route::get('/photo-booth', function () {
 Route::get('/photo-result', function () {
     return Inertia::render('PhotoResult');
 });
-
-Route::get('/ukm', function () {
-    return Inertia::render('home/Ukm');
+Route::get('/{any}', function () {
+    return Inertia::render('EmpatNolEmpat');
 });
-Route::get('/ukm/{id}', function ($id) {
-    return Inertia::render('home/Ukm', ['id' => $id]);
-});
-
-Route::get('/galeri', function () {
-    return Inertia::render('home/Galeri');
-});
-
-Route::get('/dev', function () {
-    return Inertia::render('dev/Dev');
-});
-
-
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -43,7 +29,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
-
-Route::get('/{any}', function () {
-    return Inertia::render('EmpatNolEmpat');
-});
